@@ -1,0 +1,216 @@
+.cont {
+    display: flex;
+    width: 800px;
+    height: 500px;
+    background-color: aqua;
+    border: 1px dotted red;
+}
+
+.lego {
+    display: flex;
+    position: relative;
+    flex: 1 1 66%;
+    background-color: beige;
+}
+
+.lego .profcont {
+    display: flex;
+    flex-basis: 50%;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.current {
+    display: flex;
+    flex: 1 1 33%;
+    background-color: brown;
+}
+
+
+/* div:hover {
+    outline: 2px solid rgb(7, 228, 7);
+} */
+
+div.profcont {
+    background-color: rgb(65, 163, 82);
+    height: fit-content;
+}
+
+.profcont.stv {
+    flex-flow: row wrap;
+    outline: 1px solid black;
+    height: 37px;
+    overflow: hidden;
+    border: none;
+    transition-property: top background-color;
+    transition-duration: 1s;
+    border-radius: 10px;
+}
+
+.stvani {
+    position: relative;
+    height: 110px;
+    transition-property: top background-color;
+    transition-duration: 1s;
+    top: -64px;
+}
+
+.stv:hover {
+    background-color: chartreuse;
+}
+
+.imgbox3 {
+    display: block;
+    position: absolute;
+    /* background-color: crimson; */
+    /* width: 375px; */
+    height: 290px;
+    top: 140px;
+    left: 100px;
+}
+
+.imgbox2 {
+    display: block;
+    position: absolute;
+    /* width: 250px;
+    height: 290px; */
+    top: 140px;
+    left: 100px;
+    background-color: teal;
+}
+
+select {
+    /* width: 200px; */
+    text-align: center;
+    justify-content: center;
+}
+
+.fix-stv {
+    display: none;
+    position: relative;
+    background-color: rgb(134, 134, 134);
+    width: 100%;
+    top: -1rem;
+    border-radius: 2%;
+}
+
+.select-fs {
+    display: block;
+    background-color: rgb(111, 107, 139);
+    height: 1rem;
+    width: 33%;
+    outline: 2px solid rgb(0, 0, 0);
+    text-align: center;
+    justify-self: center;
+    border-radius: 20%;
+    z-index: 2;
+}
+
+.x1 {
+    display: block;
+    position: absolute;
+    width: 125px;
+    height: 290px;
+    top: 0px;
+}
+
+.x2 {
+    display: block;
+    position: absolute;
+    width: 250px;
+    height: 290px;
+    top: 0px;
+}
+
+.x3 {
+    display: block;
+    position: absolute;
+    /* width: 375px;
+    height: 290px; */
+    top: 0px;
+}
+
+.s1 {
+    left: 0px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.s2 {
+    left: 125px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.s3 {
+    left: 250px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+#s1:hover,
+#s2:hover,
+#s3:hover {
+    opacity: .3;
+}
+
+.anim {
+    transition-property: opacity;
+    transition-duration: .5s;
+}
+
+#fon.anim {
+    transition-property: right;
+    transition-duration: 1s;
+}
+
+.fff {
+    opacity: 1;
+}
+
+.sfs {
+    opacity: 0;
+}
+
+.sizebox {
+    display: block;
+    position: relative;
+    /* border: 1px solid red; */
+    top: 200px;
+    /* left: 25px; */
+    height: 1rem;
+    text-align: center;
+}
+
+.size {
+    display: block;
+    background: darkblue;
+    width: 75px;
+    height: 1rem;
+    border: 2px solid black;
+    z-index: 3;
+    color: white;
+    float: left;
+}
+
+#h {
+    position: absolute;
+    left: -93px;
+    top: -70px;
+}
+
+#w {
+    position: absolute;
+    left: 23px;
+    top: 105px;
+}
+
+#pravo {
+    position: relative;
+    left: 188px;
+}
+
+#levo {
+    position: relative;
+    left: 23px
+}

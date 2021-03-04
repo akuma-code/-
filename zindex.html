@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <script src='lib/main.js'></script>
+    <link rel='stylesheet' href='lib/style.css' />
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script> -->
+    <script>
+        function loadScript(src, callback) {
+            let script = document.createElement("script");
+            script.src = src;
+            script.integrity = "sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=";
+            script.crossOrigin = "anonymous";
+            document.head.append(script);
+            script.onload = () => callback(script);
+        }
+
+        let source = "https://code.jquery.com/jquery-3.6.0.js";
+        loadScript(source, script => {
+            console.log(`>>>${script.src} LOADED!<<<`);
+        });
+    </script>
+</head>
+
+<body>
+    <h1>ЖАЛЮЗИ</h1>
+    <div class="cont">
+        <div class="lego">
+
+            <div class="profcont">
+                <label for="veka">Укажите профиль</label>
+                <select name="veka" id="prof">
+                    <option value="proline">Proline Comfort 70</option>
+                    <option value="softline">Softline ComfortPlus 70</option>
+                    <option value="euroline">Euroline 58</option>
+                    <option value="premium">Softline Premium 82</option>
+                </select>
+            </div>
+            <div class="stv profcont" onclick="resizeWin()">
+                <div class="stvani" id="butt">
+                    <div>1 ствока</div><br>
+                    <div>2 ствоки</div><br>
+                    <div>3 ствоки</div><br>
+                </div>
+            </div>
+            <div class="imgbox3 anim" id="imgbox">
+                <img src="lib/img/fff.svg" alt="nope" class="x3 anim" id="fon">
+                <img src="lib/img/s1.svg" alt="nope" class="x1 s1 anim" id="s1">
+                <img src="lib/img/s2.svg" alt="nope" class="x1 s2 anim" id="s2">
+                <img src="lib/img/s3.svg" alt="nope" class="x1 s3 anim" id="s3">
+
+                <div class="sizebox">
+                    <div class="size" id="levo">levo</div>
+                    <div class="size" id="pravo">pravo</div>
+                    <div class="size" id="h">height</div>
+                    <div class="size" id="w">width</div>
+                </div>
+            </div>
+
+        </div>
+        <script>
+            s1.onclick = function() {
+                if (this.style.opacity < 1) {
+                    this.style.opacity = 1;
+
+                } else {
+                    this.style.opacity = 0
+
+                };
+            }
+            s2.onclick = function() {
+                if (this.style.opacity < 1) {
+                    this.style.opacity = 1;
+
+                } else {
+                    this.style.opacity = 0
+
+                };
+            }
+            s3.onclick = function() {
+                if (this.style.opacity < 1) {
+                    this.style.opacity = 1;
+                    // fff.style.opacity = 0;
+                } else {
+                    this.style.opacity = 0
+                        // fff.style.opacity = 1;
+                };
+            };
+        </script>
+
+        <div class="current">
+            выходные данные по окну
+        </div>
+    </div>
+</body>
+
+</html>
