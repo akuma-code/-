@@ -10,5 +10,5 @@
             "name": "Launch Chrome against localhost",
             "file": "${workspaceFolder}/zindex.html"
         }
-    ]
+    ],
 }

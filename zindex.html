@@ -31,10 +31,16 @@
             <div class="profcont">
                 <label for="veka">Укажите профиль</label>
                 <select name="veka" id="prof">
-                    <option value="proline">Proline Comfort 70</option>
-                    <option value="softline">Softline ComfortPlus 70</option>
-                    <option value="euroline">Euroline 58</option>
-                    <option value="premium">Softline Premium 82</option>
+                    <option value="Proline">Proline Comfort 70мм</option>
+                    <option value="Softline">Softline ComfortPlus 70мм</option>
+                    <option value="Euroline">Euroline 58мм</option>
+                    <option value="Premium82">Softline Premium 82мм</option>
+                    <option value="WHS72">WHS72 StandartPlus 72мм</option>
+                    <option value="WHS60">WHS60 60мм</option>
+                    <option value="BasicPlus">Базовый+ 70мм</option>
+                    <option value="Optima">Оптима 60мм</option>
+                    <option value="Lux">Люкс 70мм</option>
+                    <option value="TermoPlus">Термоплюс 80мм</option>
                 </select>
             </div>
             <div class="stv profcont" onclick="resizeWin()">
@@ -51,24 +57,27 @@
                 <img src="lib/img/s3.svg" alt="nope" class="x1 s3 anim" id="s3">
 
                 <div class="sizebox">
-                    <div class="size" id="levo">500</div>
-                    <div class="size" id="pravo">500</div>
-                    <div class="size" id="h">1400</div>
-                    <div class="size" id="w">1800</div>
+                    <input type="number" class="size" name="levo" id="levo" min="0" placeholder="левый импост" autocomplete="off">
+                    <input type="number" class="size" name="pravo" id="pravo" min="0" placeholder="правый импост" autocomplete="off">
+                    <input type="number" class="size" name="height" id="h" min="0" placeholder="высота" autocomplete="off">
+                    <input type="number" class="size" name="width" id="w" min="0" placeholder="ширина" autocomplete="off">
                 </div>
+
             </div>
 
+
+            <div class="current" id="output">
+
+            </div>
         </div>
         <script>
             s1.onclick = () => opaopa(s1);
             s2.onclick = () => opaopa(s2);
             s3.onclick = () => opaopa(s3);
+            output.onclick = () => {
+                valGetter()
+            }
         </script>
-
-        <div class="current">
-            выходные данные по окну
-        </div>
-    </div>
 </body>
 
 </html>
