@@ -184,13 +184,14 @@ select {
 
 .size {
     display: block;
-    background: darkblue;
+    background: rgb(213, 213, 250);
     width: 75px;
     height: 1rem;
     border: 2px solid black;
     z-index: 3;
-    color: white;
+    color: rgb(0, 0, 0);
     float: left;
+    text-align: center;
 }
 
 #h {
