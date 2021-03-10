@@ -113,7 +113,7 @@ async function gv() {
             return [height, left]
         };
     }
-)
+
 }
 
 function go() {
