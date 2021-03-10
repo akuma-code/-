@@ -8,9 +8,10 @@ async function gv() {
     let mstv = await document.getElementById("s2").style.opacity;
     let rstv = await document.getElementById("s3").style.opacity;
 
-    function consumeValues() {
-        let left, right, mid;
+    async function consumeValues() {
+        let left, right, mid, height;
         let dr, drs, di, dsi;
+
         if (system == "Proline") {
             dr = 48;
             di = 26.5;
@@ -81,15 +82,26 @@ async function gv() {
 
         if (l && r) {
             //3 stvorki
-            left = (!lstv) ? l - dr - di : l - (drs + dsi);
+            left = (!lstv) ? l - dr - di : l - drs + dsi;
             right = (!rstv) ? r - dr - di : r - drs - dsi;
             mid = (!mstv) ? w - di * 2 : w - dsi * 2;
+            return [
+                [height.l, left],
+                [height.m, mid],
+                [height.r, right],
+            ]
         };
         if (!r) {
             // 2 stvorki
-            left = (!lstv) ? l - dr - di : l - (drs + dsi);
-            right = (!lstv) ? w - l - dr - di : w - l - dsi - drs;
+            left = (!lstv) ? l - dr - di : l - drs + dsi;
+            height.l = (!lstv) ? h - 2 * dr : h - 2 * drs;
+            right = (!mstv) ? w - l - dr - di : w - l - dsi - drs;
+            height.r = (!mstv) ? h - 2 * dr : h - 2 * drs;
             mid = 0;
+            return [
+                [height.l, left],
+                [height.r, right]
+            ]
         };
 
         if (!l && !r) {
@@ -97,30 +109,35 @@ async function gv() {
             left = (!lstv) ? w - 2 * dr : w - 2 * drs;
             right = 0;
             mid = 0;
+            height = (!lstv) ? h - 2 * dr : h - 2 * drs;
+            return [height, left]
         };
-
-
     }
-    // left = (lstv == 0) ? l - dr - di : l - drs - dsi;
-    // right = (rstv == 0) ? r - dr - di : r - drs - dsi;
-    // mid = (mstv == 0) ? mid - di * 2 : mid - dsi * 2;
-
-
-
-    return [
-        [system],
-        [h, left, (lstv)],
-        [h, mid, (mstv)],
-        [h, right, (rstv)]
-    ]
-
+)
 }
+
+function go() {
+    gv().then(
+        result => consumeValues()
+    )
+}
+// left = (lstv == 0) ? l - dr - di : l - drs - dsi;
+// right = (rstv == 0) ? r - dr - di : r - drs - dsi;
+// mid = (mstv == 0) ? mid - di * 2 : mid - dsi * 2;
+
+
+
+// return [
+//     [system],
+//     [h, left, (lstv)],
+//     [h, mid, (mstv)],
+//     [h, right, (rstv)]
+// ]
+
+
+
 
 function out() {
     gv().then(
-        result => {
-            for (let item of result) {
-                console.log(item);
-            }
-        })
+        result => consumeValues())
 }
