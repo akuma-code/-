@@ -5,9 +5,15 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "chrome",
+            "name": "Testing",
             "request": "launch",
+            "type": "chrome",
+            "file": "${workspaceFolder}/test.html"
+        },
+        {
             "name": "Launch Chrome against localhost",
+            "request": "launch",
+            "type": "chrome",
             "file": "${workspaceFolder}/zindex.html"
         }
     ],
