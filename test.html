@@ -20,7 +20,6 @@
 
         loadScript(source, script => {
             console.log(`>>>TESTING PAGE LOADED!<<<`);
-
         });
     </script>
 </head>
@@ -68,20 +67,22 @@
             </div>
 
 
-            <div class="current" id="output">
-                <div>
-                    <button onclick="calc()">CALC</button>
-                </div>
+            <div class="current">
+                <div class="sidelist" id="outside"></div>
+                <!-- <ul id="output" class="sidelist"></ul> -->
             </div>
         </div>
-        <script>
-            s1.onclick = () => opaopa(s1);
-            s2.onclick = () => opaopa(s2);
-            s3.onclick = () => opaopa(s3);
-            // output.onclick = () => {
-            //     getvals()
-            // }
-        </script>
+    </div>
+    <script>
+        s1.onclick = () => opaopa(s1);
+        s2.onclick = () => opaopa(s2);
+        s3.onclick = () => opaopa(s3);
+        // output.onclick = () => {
+        //     getvals()
+        // }
+    </script>
+    <button onclick="calc()" id="startbtn">CALC</button>
+
 </body>
 
 </html>
