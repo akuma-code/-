@@ -1,6 +1,6 @@
 .cont {
     display: flex;
-    width: 800px;
+    width: 1000px;
     height: 500px;
     background-color: aqua;
     border: 1px dotted red;
@@ -22,8 +22,13 @@
 
 .current {
     display: flex;
-    flex: 1 1 33%;
+    flex: 1 1 50%;
+    flex-flow: column nowrap;
     background-color: brown;
+    justify-content: flex-start;
+    align-content: flex-start;
+    justify-items: self-start;
+    overflow: auto;
 }
 
 
@@ -184,13 +189,14 @@ select {
 
 .size {
     display: block;
-    background: darkblue;
+    background: rgb(213, 213, 250);
     width: 75px;
     height: 1rem;
     border: 2px solid black;
     z-index: 3;
-    color: white;
+    color: rgb(0, 0, 0);
     float: left;
+    text-align: center;
 }
 
 #h {
@@ -213,4 +219,54 @@ select {
 #levo {
     position: relative;
     left: 23px
+}
+
+ol {
+    list-style: none outside none;
+    text-align: start;
+    box-sizing: border-box;
+    /* margin-block-start: 0px;
+    margin-block-end: 0px; */
+}
+
+
+/* .sidelist {
+    display: flex;
+    flex-basis: auto;
+} */
+
+p1 {
+    /* width: 100%; */
+    height: fit-content;
+    text-align: left;
+    box-sizing: border-box;
+    word-wrap: none;
+    margin-top: 2px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+div.sidelist:hover {}
+
+li {
+    border: 1px solid black;
+}
+
+.config {
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    text-align: center;
+    justify-content: space-between;
+    align-content: space-between;
+    border-bottom: 2px solid black;
+}
+
+b {
+    font-size: 15px;
+}
+
+#startbtn {
+    display: block;
+    position: relative;
 }
