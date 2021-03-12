@@ -3,9 +3,8 @@
 
 <head>
     <script src='lib/main.js'></script>
-    <script src="lib/classes.js"></script>
-    <link rel='stylesheet' href='lib/style.css' />
-    <!-- <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script> -->
+    <script src="lib/sizeHandler.js"></script>
+
     <script>
         function loadScript(src, callback) {
             let script = document.createElement("script");
@@ -21,6 +20,7 @@
             console.log(`>>>${script.src} LOADED!<<<`);
         });
     </script>
+    <link rel='stylesheet' href='lib/style.css' />
 </head>
 
 <body>
@@ -29,7 +29,6 @@
         <div class="lego">
 
             <div class="profcont">
-                <label for="veka">Укажите профиль</label>
                 <select name="veka" id="prof">
                     <option value="Proline">Proline Comfort 70мм</option>
                     <option value="Softline">Softline ComfortPlus 70мм</option>
@@ -42,12 +41,25 @@
                     <option value="Lux">Люкс 70мм</option>
                     <option value="TermoPlus">Термоплюс 80мм</option>
                 </select>
+                <select name="glass-depth" id="gdepth" class="gldepth">
+                    <option value="24">24 mm</option>
+                    <option value="28">28 mm</option>
+                    <option value="30">30 mm</option>
+                    <option value="32">32 mm</option>
+                    <option value="36">36 mm</option>
+                    <option value="38">38 mm</option>
+                    <option value="40">40 mm</option>
+                </select>
             </div>
-            <div class="stv profcont" onclick="resizeWin()">
-                <div class="stvani" id="butt">
-                    <div>1 ствока</div><br>
-                    <div>2 ствоки</div><br>
-                    <div>3 ствоки</div><br>
+            <div class="stv profcont">
+                <div id="leftarrow" class="arrow-btn" onclick="stepleft()">
+                    <p2><span> Previous</span></p2>
+                </div>
+                <div class="btncont">
+                    <div class="lr-btn stvani" id="butt">1 створка 2 створки 3 створки</div>
+                </div>
+                <div id="rightarrow" class="arrow-btn" onclick="stepright()">
+                    <p2><span> Next</span></p2>
                 </div>
             </div>
             <div class="imgbox3 anim" id="imgbox">
@@ -56,8 +68,8 @@
                 <img src="lib/img/s2.svg" alt="nope" class="x1 s2 anim" id="s2">
                 <img src="lib/img/s3.svg" alt="nope" class="x1 s3 anim" id="s3">
 
-                <div class="sizebox" id="sizebox">
-                    <input type="text" class="size" name="levo" id="levo" min="0" placeholder="левый импост" autocomplete="off" value="700">
+                <div class="sizebox">
+                    <input type="text" class="size" name="levo" id="levo" min="0" placeholder="левый импост" autocomplete="off" value="600">
                     <input type="text" class="size" name="pravo" id="pravo" min="0" placeholder="правый импост" autocomplete="off" value="600">
                     <input type="text" class="size" name="height" id="h" min="0" placeholder="высота" autocomplete="off" value="1400">
                     <input type="text" class="size" name="width" id="w" min="0" placeholder="ширина" autocomplete="off" value="1800">
@@ -66,18 +78,23 @@
             </div>
 
 
-            <div class="current" id="output">
-
+            <div class="current">
+                <div><button class="calc-btn" onclick="calc()">Calc glass sizes</button></div>
+                <div class="sidelist" id="outside"></div>
+                <!-- <ul id="output" class="sidelist"></ul> -->
             </div>
         </div>
-        <script>
-            s1.onclick = () => opaopa(s1);
-            s2.onclick = () => opaopa(s2);
-            s3.onclick = () => opaopa(s3);
-            output.onclick = () => {
-                getvals()
-            }
-        </script>
+    </div>
+    <script>
+        s1.onclick = () => opaopa(s1);
+        s2.onclick = () => opaopa(s2);
+        s3.onclick = () => opaopa(s3);
+        // output.onclick = () => {
+        //     getvals()
+        // }
+    </script>
+
+
 </body>
 
 </html>
