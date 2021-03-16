@@ -400,3 +400,8 @@ li {
     display: block;
     position: relative;
 }
+
+td {
+    width: fit-content;
+    border: 1px solid black;
+}
