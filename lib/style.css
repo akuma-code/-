@@ -401,7 +401,18 @@ li {
     position: relative;
 }
 
-td {
-    width: fit-content;
+td,
+th {
     border: 1px solid black;
+    text-align: center;
+}
+
+.ztype,
+.zs {
+    background-color: hotpink;
+}
+
+table {
+    width: 500px;
+    border-collapse: collapse;
 }
