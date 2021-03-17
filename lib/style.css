@@ -1,3 +1,7 @@
+body {
+    background-color: beige;
+}
+
 .cont {
     display: flex;
     width: 1000px;
@@ -11,6 +15,7 @@
     position: relative;
     flex: 1 1 66%;
     background-color: beige;
+    border-bottom: 3px double coral;
 }
 
 .lego .profcont {
@@ -25,6 +30,7 @@
     flex: 1 2 55%;
     flex-flow: column nowrap;
     border-left: 3px double coral;
+    border-right: 3px double coral;
     overflow: auto;
 }
 
@@ -369,17 +375,17 @@ p1 {
     font-size: 15px;
 }
 
-h3 b,
+h3>b,
 strong {
-    font-size: 20px;
+    font-size: 15px;
 }
 
-h3 {
+.config>h3 {
     text-align: left;
-    font-size: 25px;
-    margin-left: 25px;
+    font-size: 18px;
     margin-top: 2px;
     margin-bottom: 2px;
+    background-color: chocolate;
 }
 
 li {
@@ -396,6 +402,12 @@ li {
     border-bottom: 2px solid black;
 }
 
+table {
+    display: flex;
+    width: 300px;
+    border-collapse: collapse;
+}
+
 #startbtn {
     display: block;
     position: relative;
@@ -407,12 +419,43 @@ th {
     text-align: center;
 }
 
-.ztype,
 .zs {
     background-color: hotpink;
+    border-collapse: collapse;
+    border-style: inset;
+    border-width: 3px;
+    padding: 2px;
+    border-color: cornsilk;
+    border-top-width: 0px;
+    border-bottom-width: 1px;
+    /* width: 33%; */
 }
 
-table {
-    width: 500px;
-    border-collapse: collapse;
+#tb-out>th {
+    background-color: chocolate;
+    font-size: 1.2rem;
+}
+
+#tb-out>th::first-letter {
+    font-size: 35px;
+    color: ghostwhite;
+    font-family: fantasy;
+    font-style: oblique;
+    letter-spacing: 10px;
+}
+
+.config>h3::first-letter {
+    font-size: 25px;
+    color: ghostwhite;
+    font-family: fantasy;
+    font-style: oblique;
+    letter-spacing: 10px;
+}
+
+#zout {
+    display: flex;
+    flex-flow: column wrap;
+    max-height: 330px;
+    overflow: auto;
+    width: 1000px;
 }
