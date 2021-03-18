@@ -26,11 +26,23 @@
 
 <body>
     <h1>ЖАЛЮЗИ</h1>
-    <div class="cont">
-        <div class="lego">
+    <header class="head">
+        <div class="headcont">
+            <div class="head-item switch" id="ztype" onclick="toggletype()">Isolite
+                <div class="slider"></div>
+            </div>
+            <div class="head-item">zColor</div>
+            <div class="head-item">Вывод группы ткани</div>
+            <div class="head-item">
+                <button class="calc-btn" onclick="calc()">Calculate</button>
+            </div>
 
-            <div class="profcont">
-                <select name="veka" id="prof">
+        </div>
+    </header>
+    <div class="cont lego">
+
+        <div class="profcont">
+            <select name="veka" id="prof">
                     <option value="Proline">Proline Comfort 70мм</option>
                     <option value="Softline">Softline ComfortPlus 70мм</option>
                     <option value="Euroline">Euroline 58мм</option>
@@ -42,7 +54,7 @@
                     <option value="Lux">Люкс 70мм</option>
                     <option value="TermoPlus">Термоплюс 80мм</option>
                 </select>
-                <select name="glass-depth" id="gdepth" class="gldepth">
+            <select name="glass-depth" id="gdepth" class="gldepth">
                     <option value="28">28 mm</option>
                     <option value="24">24 mm</option>
                     <option value="30">30 mm</option>
@@ -51,43 +63,39 @@
                     <option value="38">38 mm</option>
                     <option value="40">40 mm</option>
                 </select>
-                <select name="Ztype" id="ztype" class="gldepth">
-                    <option value="Rollite">Rollite</option>
-                    <option value="Isolite">Isolite</option>
-                </select>
-            </div>
-            <div class="stv profcont">
-                <div id="leftarrow" class="arrow-btn" onclick="stepleft()">
-                    <p2><span> Prev</span></p2>
-                </div>
-                <div class="btncont">
-                    <div class="lr-btn stvani" id="butt">1 створка 2 створки 3 створки</div>
-                </div>
-                <div id="rightarrow" class="arrow-btn" onclick="stepright()">
-                    <p2><span> Next</span></p2>
-                </div>
-            </div>
-            <div class="imgbox3 anim" id="imgbox">
-                <img src="lib/img/fff.svg" alt="nope" class="x3 anim" id="fon">
-                <img src="lib/img/s1.svg" alt="nope" class="x1 s1 anim" id="s1" onclick="opaopa(s1)">
-                <img src="lib/img/s2.svg" alt="nope" class="x1 s2 anim" id="s2" onclick="opaopa(s2)">
-                <img src="lib/img/s3.svg" alt="nope" class="x1 s3 anim" id="s3" onclick="opaopa(s3)">
 
-                <div class="sizebox">
-                    <input type="text" class="size" name="levo" id="levo" min="0" placeholder="левый импост" autocomplete="off" value="600">
-                    <input type="text" class="size" name="pravo" id="pravo" min="0" placeholder="правый импост" autocomplete="off" value="600">
-                    <input type="text" class="size" name="height" id="h" min="0" placeholder="высота" autocomplete="off" value="1400">
-                    <input type="text" class="size" name="width" id="w" min="0" placeholder="ширина" autocomplete="off" value="1800">
-                </div>
+        </div>
+        <div class="stv profcont">
+            <div id="leftarrow" class="arrow-btn" onclick="stepleft()">
+                <p2><span> Prev</span></p2>
+            </div>
+            <div class="btncont">
+                <div class="lr-btn stvani" id="butt">1 створка 2 створки 3 створки</div>
+            </div>
+            <div id="rightarrow" class="arrow-btn" onclick="stepright()">
+                <p2><span> Next</span></p2>
+            </div>
+        </div>
+        <div class="imgbox3 anim" id="imgbox">
+            <img src="lib/img/fff.svg" alt="nope" class="x3 anim" id="fon">
+            <img src="lib/img/s1.svg" alt="nope" class="x1 s1 anim" id="s1" onclick="opaopa(s1)">
+            <img src="lib/img/s2.svg" alt="nope" class="x1 s2 anim" id="s2" onclick="opaopa(s2)">
+            <img src="lib/img/s3.svg" alt="nope" class="x1 s3 anim" id="s3" onclick="opaopa(s3)">
 
+            <div class="sizebox">
+                <input type="text" class="size" name="levo" id="levo" min="0" placeholder="левый импост" autocomplete="off" value="600">
+                <input type="text" class="size" name="pravo" id="pravo" min="0" placeholder="правый импост" autocomplete="off" value="600">
+                <input type="text" class="size" name="height" id="h" min="0" placeholder="высота" autocomplete="off" value="1400">
+                <input type="text" class="size" name="width" id="w" min="0" placeholder="ширина" autocomplete="off" value="1800">
             </div>
 
+        </div>
 
-            <div class="current">
-                <div><button class="calc-btn" onclick="calc()">Calc glass sizes</button></div>
-                <div class="sidelist" id="outside"></div>
-                <!-- <ul id="output" class="sidelist"></ul> -->
-            </div>
+
+        <div class="current">
+            <!-- <div><button class="calc-btn" onclick="calc()">Calculate</button></div> -->
+            <div class="sidelist" id="outside"></div>
+            <!-- <ul id="output" class="sidelist"></ul> -->
         </div>
     </div>
     <div id="zout">

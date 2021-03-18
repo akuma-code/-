@@ -13,23 +13,23 @@ body {
 .lego {
     display: flex;
     position: relative;
-    flex: 1 1 66%;
+    flex: 1 1 100%;
     background-color: beige;
     border-bottom: 3px double coral;
 }
 
 .lego .profcont {
     display: flex;
-    flex-basis: 50%;
+    flex-basis: 100%;
     flex-flow: row wrap;
-    justify-content: stretch;
+    justify-content: space-around;
 }
 
 .current {
     display: flex;
-    flex: 1 2 55%;
+    flex: 65%;
     flex-flow: column nowrap;
-    border-left: 3px double coral;
+    /* border-left: 3px double coral; */
     border-right: 3px double coral;
     overflow: auto;
 }
@@ -45,7 +45,7 @@ div.profcont {
     border-radius: 10px;
 }
 
-.profcont.stv {
+.profcont {
     flex-flow: column nowrap;
     /* flex: 1 1 33%; */
     /* outline: 1px solid black; */
@@ -125,7 +125,7 @@ div.profcont {
     transition: 0.5s;
 }
 
-#leftarrow span:after {
+#leftarrow span::before {
     content: '\21D0';
     position: absolute;
     opacity: 0;
@@ -139,7 +139,7 @@ div.profcont {
     padding-left: 0px;
 }
 
-#leftarrow:hover span:after {
+#leftarrow:hover span::before {
     opacity: 1;
     left: -25px;
 }
@@ -171,25 +171,33 @@ div.profcont {
 
 .calc-btn {
     display: flex;
-    height: 40px;
+    height: 50px;
     width: 100%;
     border-radius: 10px;
     background-color: coral;
     justify-content: center;
     align-items: center;
-    font-size: 24px;
+    font-size: 25px;
     transition-property: all;
-    transition-duration: .4s;
-    /* text-shadow: 4px -3px 4px black */
+    transition-duration: .2s;
+    cursor: pointer;
+    border: none;
+}
+
+.calc-btn:hover {
+    font-size: xx-large;
 }
 
 .calc-btn:active {
     background-color: gray;
+    font-size: 5px;
+    border: 3px solid white;
+    border-style: inset;
 }
 
 .gldepth {
     display: flex;
-    flex-basis: 40%;
+    flex-basis: 25%;
     background-color: coral;
     text-align-last: center;
     font-size: 28px;
@@ -198,12 +206,13 @@ div.profcont {
 
 select#prof {
     display: flex;
-    flex-basis: 40%;
+    flex-basis: 50%;
     background-color: coral;
     text-align-last: center;
     font-size: 15px;
     font-weight: bold;
     border-radius: 10px;
+    flex-grow: .9;
 }
 
 .stv:hover {
@@ -464,4 +473,53 @@ th {
 
 .ft {
     display: flex;
+}
+
+.head {
+    width: 1000px;
+    height: 60px;
+}
+
+.headcont {
+    display: flex;
+    flex-flow: row nowrap;
+    height: 100%;
+    background-color: grey;
+    border-radius: 10px;
+}
+
+.head-item {
+    display: flex;
+    background-color: tomato;
+    flex: 1 1 25%;
+    border: 1px solid white;
+    align-items: center;
+    justify-content: center;
+    transition-property: all;
+    transition-duration: .2s;
+    border-radius: 15px;
+}
+
+.head-item:active {
+    border-style: inset;
+    border: 3px solid white;
+}
+
+.head>h1 {
+    float: left;
+}
+
+.switch {
+    position: relative;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.switch:hover {
+    font-size: xx-large;
+}
+
+.switch:active {
+    font-size: 1px;
+    background-color: grey;
 }
