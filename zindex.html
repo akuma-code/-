@@ -28,11 +28,8 @@
     <h1>ЖАЛЮЗИ</h1>
     <header class="head">
         <div class="headcont">
-            <div class="head-item switch" id="ztype" onclick="toggletype()">Isolite
-                <div class="slider"></div>
-            </div>
             <div class="head-item">
-                <select name="veka" id="prof" onclick="toggledepth()">
+                <select name="veka" id="prof" oninput="td()">
                     <option value="Proline">Proline Comfort 70мм</option>
                     <option value="Softline">Softline ComfortPlus 70мм</option>
                     <option value="Euroline">Euroline 58мм</option>
@@ -45,47 +42,34 @@
                     <option value="TermoPlus">Термоплюс 80мм</option>
                 </select>
                 <select name="glass-depth" id="gdepth" class="gldepth">
-                    <option class="odepth" value="28">28 mm</option>
+                    <option class="odepth" value=""></option>
                     <option class="odepth" value="24">24 mm</option>
+                    <option class="odepth" value="28">28 mm</option>
                     <option class="odepth" value="30">30 mm</option>
                     <option class="odepth" value="32">32 mm</option>
                     <option class="odepth" value="36">36 mm</option>
                     <option class="odepth" value="38">38 mm</option>
                     <option class="odepth" value="40">40 mm</option>
+                    <option class="odepth" value="52">52 mm</option>
                 </select>
 
             </div>
-            <div class="head-item">Вывод группы ткани</div>
+            <div class="head-item switch" id="ztype" onclick="tt()">Isolite
+                <div class="slider"></div>
+            </div>
+            <input type="list" list="zhlist" class="head-item" name="zhlist" id="zlist" placeholder="Тип ткани" oninput="setgr()">
+            <datalist id="zhlist">
+                <option value="Аллегро(2.0)"></option>
+                <option value="Аллегро XL(2.5)"></option>
+                <option value="Аллегро XXL(3.0)"></option>
+                <option value="Ажур"></option>
+            </datalist>
+            <div id="zgrp" class="head-item">GR</div>
             <button class="calc-btn hand-item" onclick="calc()">Calculate</button>
 
         </div>
     </header>
     <div class="cont lego">
-
-        <!-- <div class="profcont">
-            <select name="veka" id="prof" onclick="toggledepth()">
-                    <option value="Proline">Proline Comfort 70мм</option>
-                    <option value="Softline">Softline ComfortPlus 70мм</option>
-                    <option value="Euroline">Euroline 58мм</option>
-                    <option value="Premium82">Softline Premium 82мм</option>
-                    <option value="WHS72">WHS72 StandartPlus 72мм</option>
-                    <option value="WHS60">WHS60 60мм</option>
-                    <option value="BasicPlus">Базовый+ 70мм</option>
-                    <option value="Optima">Оптима 60мм</option>
-                    <option value="Lux">Люкс 70мм</option>
-                    <option value="TermoPlus">Термоплюс 80мм</option>
-                </select>
-            <select name="glass-depth" id="gdepth" class="gldepth">
-                    <option class="odepth" value="28">28 mm</option>
-                    <option class="odepth" value="24">24 mm</option>
-                    <option class="odepth" value="30">30 mm</option>
-                    <option class="odepth" value="32">32 mm</option>
-                    <option class="odepth" value="36">36 mm</option>
-                    <option class="odepth" value="38">38 mm</option>
-                    <option class="odepth" value="40">40 mm</option>
-                </select>
-
-        </div> -->
 
         <div class="imgbox3 anim" id="imgbox">
             <img src="lib/img/fff.svg" alt="nope" class="x3 anim" id="fon">
@@ -104,9 +88,9 @@
 
 
         <div class="current">
-            <!-- <div><button class="calc-btn" onclick="calc()">Calculate</button></div> -->
-            <div id="outside"></div>
-            <!-- <ul id="output" class="sidelist"></ul> -->
+            <div id="outside">
+
+            </div>
         </div>
     </div>
 

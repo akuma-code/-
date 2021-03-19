@@ -204,8 +204,8 @@ div.profcont {
     font-size: 28px;
     border-radius: 10px;
     height: 100%;
-    opacity: .2;
-    transition: all .5s;
+    opacity: 0.1;
+    transition: all .4s;
 }
 
 select#prof {
@@ -217,11 +217,12 @@ select#prof {
     font-weight: bold;
     border-radius: 10px;
     height: 100%;
-    transition: all .1s;
+    transition: all .3s;
 }
 
-select#prof:hover {
-    font-size: 1.1em;
+select#prof:hover,
+select#prof:hover~select {
+    background-color: rgb(204, 200, 200);
 }
 
 .stv:hover {
@@ -512,7 +513,7 @@ th {
 
 .head-item:active {
     border-style: inset;
-    border: 3px solid white;
+    border: 3px solid rgb(0, 0, 0);
 }
 
 .head>h1 {
@@ -523,6 +524,7 @@ th {
     position: relative;
     cursor: pointer;
     font-size: 20px;
+    color: white;
 }
 
 .switch:hover {
@@ -540,4 +542,18 @@ th {
 
 #outside {
     align-self: flex-end;
+}
+
+#zgrp {
+    flex-basis: 65px;
+}
+
+#zlist {
+    text-align: center;
+    font-weight: bolder;
+    font-size: 15px;
+}
+
+div.head-item:first-child {
+    background-color: beige;
 }
