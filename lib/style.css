@@ -15,7 +15,7 @@ body {
     position: relative;
     flex: 1 1 100%;
     background-color: beige;
-    border-bottom: 3px double coral;
+    /* border-bottom: 3px double coral; */
 }
 
 .lego .profcont {
@@ -31,7 +31,7 @@ body {
     flex-flow: column nowrap;
     /* border-left: 3px double coral; */
     border-right: 3px double coral;
-    overflow: auto;
+    overflow: visible;
 }
 
 
@@ -170,9 +170,10 @@ div.profcont {
 }
 
 .calc-btn {
-    display: flex;
-    height: 50px;
-    width: 100%;
+    /* display: flex; */
+    /* height: 50px; */
+    /* width: 100%; */
+    flex: 1 1 25%;
     border-radius: 10px;
     background-color: coral;
     justify-content: center;
@@ -413,11 +414,12 @@ li {
     border-bottom: 2px solid black;
 }
 
-table {
+
+/* table {
     display: flexbox;
     width: 300px;
     border-collapse: collapse;
-}
+} */
 
 #startbtn {
     display: block;
@@ -431,32 +433,32 @@ th {
 }
 
 .zs {
-    background-color: hotpink;
+    /* background-color: hotpink; */
     border-collapse: collapse;
     border-style: inset;
-    border-width: 3px;
-    padding: 2px;
-    border-color: cornsilk;
-    border-top-width: 0px;
+    border-width: 1px;
+    padding: 2px auto;
+    border-color: rgb(0, 0, 0);
+    border-top-width: 1px;
     border-bottom-width: 1px;
-    /* width: 33%; */
+    width: 25%;
 }
 
-#tb-out>th {
+#outside>th {
     background-color: chocolate;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
-#tb-out>th::first-letter {
-    font-size: 35px;
-    color: ghostwhite;
-    font-family: fantasy;
+#outside>th::first-line {
+    font-size: 18px;
+    color: rgb(30, 30, 73);
+    /* font-family: fantasy; */
     font-style: oblique;
-    letter-spacing: 10px;
+    /* letter-spacing: 10px; */
 }
 
 .config>h3::first-letter {
-    font-size: 25px;
+    font-size: 15px;
     color: ghostwhite;
     font-family: fantasy;
     font-style: oblique;
@@ -522,4 +524,12 @@ th {
 .switch:active {
     font-size: 1px;
     background-color: grey;
+}
+
+.odepth {
+    display: block;
+}
+
+#outside {
+    align-self: flex-end;
 }

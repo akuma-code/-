@@ -31,18 +31,40 @@
             <div class="head-item switch" id="ztype" onclick="toggletype()">Isolite
                 <div class="slider"></div>
             </div>
-            <div class="head-item">zColor</div>
-            <div class="head-item">Вывод группы ткани</div>
             <div class="head-item">
-                <button class="calc-btn" onclick="calc()">Calculate</button>
+                <select name="veka" id="prof" onclick="toggledepth()">
+                    <option value="Proline">Proline Comfort 70мм</option>
+                    <option value="Softline">Softline ComfortPlus 70мм</option>
+                    <option value="Euroline">Euroline 58мм</option>
+                    <option value="Premium82">Softline Premium 82мм</option>
+                    <option value="WHS72">WHS72 StandartPlus 72мм</option>
+                    <option value="WHS60">WHS60 60мм</option>
+                    <option value="BasicPlus">Базовый+ 70мм</option>
+                    <option value="Optima">Оптима 60мм</option>
+                    <option value="Lux">Люкс 70мм</option>
+                    <option value="TermoPlus">Термоплюс 80мм</option>
+                </select>
+                <select name="glass-depth" id="gdepth" class="gldepth">
+                    <option class="odepth" value="28"></option>
+                    <option class="odepth" value="28">28 mm</option>
+                    <option class="odepth" value="24">24 mm</option>
+                    <option class="odepth" value="30">30 mm</option>
+                    <option class="odepth" value="32">32 mm</option>
+                    <option class="odepth" value="36">36 mm</option>
+                    <option class="odepth" value="38">38 mm</option>
+                    <option class="odepth" value="40">40 mm</option>
+                </select>
+
             </div>
+            <div class="head-item">Вывод группы ткани</div>
+            <button class="calc-btn hand-item" onclick="calc()">Calculate</button>
 
         </div>
     </header>
     <div class="cont lego">
 
-        <div class="profcont">
-            <select name="veka" id="prof">
+        <!-- <div class="profcont">
+            <select name="veka" id="prof" onclick="toggledepth()">
                     <option value="Proline">Proline Comfort 70мм</option>
                     <option value="Softline">Softline ComfortPlus 70мм</option>
                     <option value="Euroline">Euroline 58мм</option>
@@ -55,27 +77,17 @@
                     <option value="TermoPlus">Термоплюс 80мм</option>
                 </select>
             <select name="glass-depth" id="gdepth" class="gldepth">
-                    <option value="28">28 mm</option>
-                    <option value="24">24 mm</option>
-                    <option value="30">30 mm</option>
-                    <option value="32">32 mm</option>
-                    <option value="36">36 mm</option>
-                    <option value="38">38 mm</option>
-                    <option value="40">40 mm</option>
+                    <option class="odepth" value="28">28 mm</option>
+                    <option class="odepth" value="24">24 mm</option>
+                    <option class="odepth" value="30">30 mm</option>
+                    <option class="odepth" value="32">32 mm</option>
+                    <option class="odepth" value="36">36 mm</option>
+                    <option class="odepth" value="38">38 mm</option>
+                    <option class="odepth" value="40">40 mm</option>
                 </select>
 
-        </div>
-        <div class="stv profcont">
-            <div id="leftarrow" class="arrow-btn" onclick="stepleft()">
-                <p2><span> Prev</span></p2>
-            </div>
-            <div class="btncont">
-                <div class="lr-btn stvani" id="butt">1 створка 2 створки 3 створки</div>
-            </div>
-            <div id="rightarrow" class="arrow-btn" onclick="stepright()">
-                <p2><span> Next</span></p2>
-            </div>
-        </div>
+        </div> -->
+
         <div class="imgbox3 anim" id="imgbox">
             <img src="lib/img/fff.svg" alt="nope" class="x3 anim" id="fon">
             <img src="lib/img/s1.svg" alt="nope" class="x1 s1 anim" id="s1" onclick="opaopa(s1)">
@@ -94,19 +106,11 @@
 
         <div class="current">
             <!-- <div><button class="calc-btn" onclick="calc()">Calculate</button></div> -->
-            <div class="sidelist" id="outside"></div>
+            <div id="outside"></div>
             <!-- <ul id="output" class="sidelist"></ul> -->
         </div>
     </div>
-    <div id="zout">
-        <div class="ft">
-            <table>
 
-                <tbody id="tb-out">
-                </tbody>
-            </table>
-        </div>
-    </div>
 
 
 </body>
