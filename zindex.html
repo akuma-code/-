@@ -28,6 +28,7 @@
     <h1>ЖАЛЮЗИ</h1>
     <header class="head">
         <div class="headcont">
+
             <div class="head-item">
                 <select name="veka" id="prof" oninput="td()">
                     <option value="Proline">Proline Comfort 70мм</option>
@@ -41,10 +42,10 @@
                     <option value="Lux">Люкс 70мм</option>
                     <option value="TermoPlus">Термоплюс 80мм</option>
                 </select>
-                <select name="glass-depth" id="gdepth" class="gldepth">
-                    <option class="odepth" value=""></option>
-                    <option class="odepth" value="24">24 mm</option>
+                <select name="glass-depth" id="gdepth" class="gldepth" onclick="this.style.opacity = 1">
+                    <!-- <option class="odepth" value=""></option> -->
                     <option class="odepth" value="28">28 mm</option>
+                    <option class="odepth" value="24">24 mm</option>
                     <option class="odepth" value="30">30 mm</option>
                     <option class="odepth" value="32">32 mm</option>
                     <option class="odepth" value="36">36 mm</option>
@@ -52,11 +53,12 @@
                     <option class="odepth" value="40">40 mm</option>
                     <option class="odepth" value="52">52 mm</option>
                 </select>
-
             </div>
+
             <div class="head-item switch" id="ztype" onclick="tt()">Isolite
                 <div class="slider"></div>
             </div>
+
             <input type="list" list="zhlist" class="head-item" name="zhlist" id="zlist" placeholder="Тип ткани" oninput="setgr()">
             <datalist id="zhlist">
                 <option value="Аллегро(2.0)"></option>
@@ -64,11 +66,20 @@
                 <option value="Аллегро XXL(3.0)"></option>
                 <option value="Ажур"></option>
             </datalist>
-            <div id="zgrp" class="head-item">GR</div>
+
+            <div id="zgrp" class="head-item"></div>
             <button class="calc-btn hand-item" onclick="calc()">Calculate</button>
 
         </div>
     </header>
+    <div class="ktype">
+        <input type="radio" value="Белый" id="whiteK" name="KorColor" checked>
+        <label for="whiteK">Белый</label>
+        <input type="radio" value="lamin" id="laminK" name="KorColor">
+        <label for="laminK">зол/махагон</label>
+        <input type="radio" value="color" id="colorK" name="KorColor">
+        <label for="colorK"> Kоричневый / бежевый /  серый  </label>
+    </div>
     <div class="cont lego">
 
         <div class="imgbox3 anim" id="imgbox">
