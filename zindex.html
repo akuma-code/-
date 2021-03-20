@@ -19,6 +19,7 @@
 
         let source = "https://code.jquery.com/jquery-3.6.0.js";
         loadScript(source, script => {
+            td();
             console.log(`>>>${script.src} LOADED!<<<`);
         });
     </script>
@@ -55,16 +56,13 @@
                 </select>
             </div>
 
-            <div class="head-item switch" id="ztype" onclick="tt()">Isolite
-                <div class="slider"></div>
+            <div class="head-item switch" id="ztype" onclick="tt()">
+                <!-- <div class="slider"></div> -->
             </div>
 
             <input type="list" list="zhlist" class="head-item" name="zhlist" id="zlist" placeholder="Тип ткани" oninput="setgr()">
             <datalist id="zhlist">
-                <option value="Аллегро(2.0)"></option>
-                <option value="Аллегро XL(2.5)"></option>
-                <option value="Аллегро XXL(3.0)"></option>
-                <option value="Ажур"></option>
+             
             </datalist>
 
             <div id="zgrp" class="head-item"></div>
@@ -72,13 +70,13 @@
 
         </div>
     </header>
-    <div class="ktype">
-        <input type="radio" value="Белый" id="whiteK" name="KorColor" checked>
+    <div class="ktype" id="korob" oninput="setgr()">
+        <input type="radio" value="white" id="whiteK" name="KorColor" checked>
         <label for="whiteK">Белый</label>
         <input type="radio" value="lamin" id="laminK" name="KorColor">
         <label for="laminK">зол/махагон</label>
         <input type="radio" value="color" id="colorK" name="KorColor">
-        <label for="colorK"> Kоричневый / бежевый /  серый  </label>
+        <label for="colorK">Kоричневый/бежевый/серый</label>
     </div>
     <div class="cont lego">
 
