@@ -3,10 +3,11 @@
 
 <head>
     <link rel='stylesheet' href='lib/style.css' />
+    <script src="lib/global.js"></script>
     <script src='lib/main.js'></script>
     <script src="lib/sizeHandler.js"></script>
     <script src="lib/classes.js"></script>
-
+    <script src="lib/classout.js"></script>
 
     <script>
         function loadScript(src, callback) {
@@ -57,11 +58,11 @@
                 </select>
             </div>
 
-            <div class="head-item switch" id="ztype" onclick="tt()">
+            <div class="head-item ztypebtn" id="ztype" onclick="tt()">
                 <!-- <div class="slider"></div> -->
             </div>
 
-            <input type="list" list="zhlist" class="head-item" name="zhlist" id="zlist" placeholder="Тип ткани" oninput="setgr()">
+            <input type="list" list="zhlist" class="head-item" name="zhlist" id="zlist" placeholder="Цвет" oninput="setgr()"><span class="resetv" onclick="resetvals()">&#9746;</span>
             <datalist id="zhlist">
              
             </datalist>
@@ -74,13 +75,14 @@
     <div class="ktype" id="korob" oninput="setgr()">
         <input type="radio" value="white" id="whiteK" name="KorColor" checked>
         <label for="whiteK">Белый</label>
-        <input type="radio" value="lamin" id="laminK" name="KorColor">
-        <label for="laminK">зол/махагон</label>
+        <input type="radio" value="lamin" id="laminK" name="KorColor" class="show">
+        <label for="laminK" class="show">золото/махагон</label>
         <input type="radio" value="color" id="colorK" name="KorColor">
-        <label for="colorK">Kоричневый/бежевый/серый</label>
+        <label for="colorK">Kоричневый/бежевый/серебро</label>
     </div>
     <div class="cont lego">
-        <div class="prev"></div>
+        <div class="pnbtn prev" onclick="stepleft()">&#9194;</div>
+        <div class="pnbtn next" onclick="stepright()">&#9193;</div>
         <div class="imgbox3 anim" id="imgbox">
             <img src="img/fff.svg" alt="nope" class="x3 anim" id="fon">
             <img src="img/s1.svg" alt="nope" class="x1 s1 anim" id="s1" onclick="opaopa(s1)">

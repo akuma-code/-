@@ -1,12 +1,100 @@
 /* ================rama change button */
 
-.prev {
+.pnbtn {
     display: block;
     position: absolute;
     z-index: 3;
-    width: 50px;
-    height: 50px;
-    background-color: black;
-    left: 50%;
-    top: 50%;
+    font-size: 45px;
+    line-height: 55px;
+    /* width: 50px; */
+    /* height: 50px; */
+    /* background-color: black; */
+    /* color: blanchedalmond; */
+    padding-left: 0px;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+.prev {
+    left: 100px;
+    top: 80px;
+}
+
+.prev:hover {
+    font-size: 48px;
+    left: 95px;
+}
+
+.prev::before {
+    content: "";
+    opacity: 0;
+    transition: all .4s;
+    /* font-size: 30px; */
+}
+
+.prev:hover:active {
+    font-size: 35px;
+    left: 100px;
+}
+
+.prev:hover::before {
+    position: absolute;
+    content: "Prev";
+    left: -85px;
+    opacity: 1;
+    font-size: 48px;
+}
+
+.next {
+    left: 160px;
+    top: 80px;
+}
+
+.next::after {
+    content: "Next";
+    opacity: 0;
+    transition: all .6s;
+}
+
+.next:hover {
+    font-size: 48px;
+    left: 170px;
+}
+
+.next:hover::after {
+    content: "Next";
+    opacity: 1;
+}
+
+.next:hover:active {
+    font-size: 35px;
+    left: 160px;
+}
+
+.show {
+    display: block;
+}
+
+.resetv {
+    display: block;
+    position: absolute;
+    color: black;
+    /* background-color: coral; */
+    left: 730px;
+    top: 65px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.resetv:hover {
+    font-size: 35px;
+}
+
+.resetv:hover:active {
+    color: white;
+    font-size: 30px;
 }
