@@ -62,7 +62,7 @@
                 <!-- <div class="slider"></div> -->
             </div>
 
-            <input type="list" list="zhlist" class="head-item" name="zhlist" id="zlist" placeholder="Цвет" oninput="setgr()"><span class="resetv" onclick="resetvals()">&#9746;</span>
+            <input type="list" tabindex="5" list="zhlist" class="head-item" name="zhlist" id="zlist" placeholder="Цвет" oninput="setgr()"><span class="resetv" onclick="resetvals()">&#9746;</span>
             <datalist id="zhlist">
              
             </datalist>
@@ -90,10 +90,10 @@
             <img src="img/s3.svg" alt="nope" class="x1 s3 anim" id="s3" onclick="opaopa(s3)">
 
             <div class="sizebox">
-                <input type="text" class="size" name="levo" id="levo" min="0" placeholder="левый импост" autocomplete="off" value="600">
-                <input type="text" class="size" name="pravo" id="pravo" min="0" placeholder="правый импост" autocomplete="off" value="600">
-                <input type="text" class="size" name="height" id="h" min="0" placeholder="высота" autocomplete="off" value="1400">
-                <input type="text" class="size" name="width" id="w" min="0" placeholder="ширина" autocomplete="off" value="1800">
+                <input type="text" tabindex="3" class="size" name="levo" id="levo" min="0" placeholder="лево" autocomplete="on" value="600">
+                <input type="text" tabindex="4" class="size" name="pravo" id="pravo" min="0" placeholder="право" autocomplete="on" value="600">
+                <input type="text" tabindex="1" class="size" name="height" id="h" min="0" placeholder="высота" autocomplete="on" value="1400">
+                <input type="text" tabindex="2" class="size" name="width" id="w" min="0" placeholder="ширина" autocomplete="on" value="1800">
             </div>
 
         </div>
@@ -105,6 +105,7 @@
             </div>
         </div>
     </div>
+    <img src="img/reset.jpg" alt="reset" id="reset" class="resbtn" onclick="fullreset()">
 
 
 

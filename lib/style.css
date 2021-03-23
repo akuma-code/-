@@ -255,21 +255,7 @@ select#prof:hover~select {
 }
 
 
-/* select {
-    text-align: center;
-    justify-content: center;
-} */
-
-.fix-stv {
-    display: none;
-    position: relative;
-    background-color: rgb(134, 134, 134);
-    width: 100%;
-    top: -1rem;
-    border-radius: 2%;
-}
-
-.select-fs {
+/* .select-fs {
     display: block;
     background-color: rgb(111, 107, 139);
     height: 1rem;
@@ -279,7 +265,7 @@ select#prof:hover~select {
     justify-self: center;
     border-radius: 20%;
     z-index: 2;
-}
+} */
 
 .x1 {
     display: block;
@@ -351,7 +337,7 @@ select#prof:hover~select {
     display: block;
     position: relative;
     top: 200px;
-    height: 1rem;
+    /* height: 1.3rem; */
     text-align: center;
 }
 
@@ -359,7 +345,8 @@ select#prof:hover~select {
     display: block;
     background: rgb(213, 213, 250);
     width: 75px;
-    height: 1rem;
+    height: 1.3rem;
+    font-size: 1.3rem;
     border: 2px solid black;
     z-index: 3;
     color: rgb(0, 0, 0);
