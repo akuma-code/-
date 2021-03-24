@@ -5,21 +5,14 @@ body {
 
 .cont {
     display: flex;
-    width: 1000px;
-    height: 500px;
-    background-color: aqua;
-    /* border: 1px dotted red; */
-}
-
-.lego {
-    display: flex;
     position: relative;
     flex: 1 1 100%;
+    max-width: 1000px;
     background-color: beige;
-    /* border-bottom: 3px double coral; */
+    max-height: 700px;
 }
 
-.lego .profcont {
+.cont .profcont {
     display: flex;
     flex-basis: 100%;
     flex-flow: row wrap;
@@ -31,8 +24,9 @@ body {
     flex: 65%;
     flex-flow: column nowrap;
     /* border-left: 3px double coral; */
-    border-right: 3px double coral;
-    overflow: visible;
+    /* border-right: 3px double coral; */
+    overflow-y: auto;
+    margin-top: 6px;
 }
 
 
