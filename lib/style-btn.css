@@ -176,8 +176,44 @@
     visibility: visible;
 }
 
+.detout {
+    display: flex;
+    position: absolute;
+    left: 1030px;
+    /* width: 270px; */
+    /* outline: 1px solid black; */
+    top: 80px;
+    box-sizing: border-box;
+    text-align: center;
+    max-height: 400px;
+    overflow-y: auto;
+    list-style-position: outside;
+}
 
-/* .current::-webkit-scrollbar-button {
-    background-color: chocolate;
-    display: none;
-    /* height: 10px; */
+.detout>details {
+    flex-flow: row wrap;
+    display: flex;
+}
+
+.detout>summary {
+    white-space: nowrap;
+}
+
+.details-box {
+    /* display: flex; */
+    border: 1px solid black;
+}
+
+.details-box tr:hover {
+    background-color: cadetblue;
+}
+
+.details-box details[open]>summary:first-of-type {
+    font-size: 1.2rem;
+}
+
+.details-box[open] table th {
+    width: 100%;
+    empty-cells: hide;
+    white-space: nowrap;
+}

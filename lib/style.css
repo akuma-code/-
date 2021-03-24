@@ -421,8 +421,8 @@ li {
     position: relative;
 }
 
-td,
-th {
+#outside th,
+#outside>td {
     border: 1px solid black;
     text-align: center;
 }
