@@ -1,0 +1,157 @@
+link {
+
+}
+
+script {
+
+}
+
+h1 {
+
+}
+
+header.head {
+  div.headcont {
+    div.head-item {
+      select#prof {
+        option {
+
+        }
+      }
+
+      select#gdepth.gldepth {
+        undefined {
+
+        }
+
+        option.odepth {
+
+        }
+      }
+    }
+
+    div#ztype.head-item.ztypebtn {
+
+    }
+
+    input#zlist.head-item {
+
+    }
+
+    span.resetv {
+
+    }
+
+    datalist#zhlist {
+
+    }
+
+    div#zgrp.head-item {
+
+    }
+
+    button.calc-btn.hand-item {
+
+    }
+  }
+}
+
+div#korob.ktype {
+  input#whiteK {
+
+  }
+
+  label {
+
+  }
+
+  input#laminK.show {
+
+  }
+
+  label.show {
+
+  }
+
+  input#colorK {
+
+  }
+}
+
+div.cont {
+  div.pnbtn.prev {
+
+  }
+
+  div.pnbtn.next {
+
+  }
+
+  div#imgbox.imgbox3.anim {
+    img#fon.x3.anim {
+
+    }
+
+    img#s1.x1.s1.anim {
+
+    }
+
+    img#s2.x1.s2.anim {
+
+    }
+
+    img#s3.x1.s3.anim {
+
+    }
+
+    div.sizebox {
+      input#levo.size {
+
+      }
+
+      input#pravo.size {
+
+      }
+
+      input#h.size {
+
+      }
+
+      input#w.size {
+
+      }
+    }
+  }
+
+  div.current {
+    div#outside {
+
+    }
+  }
+}
+
+img#reset.resbtn {
+
+}
+
+img#devbtn.resbtn {
+
+}
+
+div.detout {
+  details.details-box {
+    summary {
+
+    }
+
+    table#dets {
+      tbody {
+        tr {
+          th#sysout {
+
+          }
+        }
+      }
+    }
+  }
+}

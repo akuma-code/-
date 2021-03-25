@@ -64,7 +64,6 @@
 
             <input type="list" tabindex="5" list="zhlist" class="head-item" name="zhlist" id="zlist" placeholder="Цвет" oninput="setgr()"><span class="resetv" onclick="resetvals()">&#9746;</span>
             <datalist id="zhlist">
-             
             </datalist>
 
             <div id="zgrp" class="head-item"></div>
@@ -90,10 +89,10 @@
             <img src="img/s3.svg" alt="nope" class="x1 s3 anim" id="s3" onclick="opaopa(s3)">
 
             <div class="sizebox">
-                <input type="text" tabindex="3" class="size" name="levo" id="levo" min="0" placeholder="лево" autocomplete="on" value="600">
-                <input type="text" tabindex="4" class="size" name="pravo" id="pravo" min="0" placeholder="право" autocomplete="on" value="600">
-                <input type="text" tabindex="1" class="size" name="height" id="h" min="0" placeholder="высота" autocomplete="on" value="1400">
-                <input type="text" tabindex="2" class="size" name="width" id="w" min="0" placeholder="ширина" autocomplete="on" value="1800">
+                <input type="text" tabindex="3" class="size" name="sizes" id="levo" min="0" placeholder="лево" autocomplete="on" value="600">
+                <input type="text" tabindex="4" class="size" name="sizes" id="pravo" min="0" placeholder="право" autocomplete="on" value="600">
+                <input type="text" tabindex="1" class="size" name="sizes" id="h" min="0" placeholder="высота" autocomplete="on" value="1400">
+                <input type="text" tabindex="2" class="size" name="sizes" id="w" min="0" placeholder="ширина" autocomplete="on" value="1800">
             </div>
 
         </div>
@@ -105,28 +104,21 @@
             </div>
         </div>
     </div>
-    <img src="img/reset.jpg" alt="reset" id="reset" class="resbtn" onclick="fullreset()">
-    <img src="img/devbtn.jpg" alt="reset" id="devbtn" class="resbtn" onclick="devout()">
+        <img src="img/reset.jpg" alt="reset" id="reset" class="resbtn" onclick="fullreset()">
+       <img src="img/devbtn.jpg" alt="reset" id="devbtn" class="resbtn" onclick="devout()">
     <div class="detout">
-        <details class="details-box" open>
-            <summary> Очень важная информация </summary>
-            <table id="dets">
-                <tr>
-                    <th colspan="2" id="sysout">данные по профилю</th>
-                </tr>
-                <tr>
-                    <th colspan="2" id="zhout">данные по жалюзи</th>
-                </tr>
-                <tr>
-                    <td>стекла</td>
-                    <td> жалюзи </td>
-                </tr>
-                <tr>
-                    <td id="gsout"></td>
-                    <td id="zsout"></td>
-                </tr>
-            </table>
-        </details>
+        <details class="details-grid">
+            <summary> сводка по размерам </summary>
+            <div class="gridwrapper rows">
+            <div class="gridbox" id="sysout"></div>
+            <div class="gridbox" id="zhout"></div>
+            </div>
+            <div class="gridwrapper cols">
+                <div class="gridbox" id="gsout"></div>
+                <div class="gridbox" id="zsout"></div>
+            </div>
+            </details>
+    
     </div>
 
 
