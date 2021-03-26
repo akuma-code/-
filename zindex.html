@@ -64,8 +64,7 @@
 
             </div>
 
-            <input type="list" tabindex="5" list="zhlist" class="head-item" name="zhlist" id="zlist" placeholder="Цвет"
-                oninput="setgr()"><span class="resetv" onclick="resetvals()">&#9746;</span>
+            <input type="list" tabindex="5" list="zhlist" class="head-item" name="zhlist" id="zlist" placeholder="Цвет" oninput="setgr()"><span class="resetv" onclick="resetvals()">&#9746;</span>
             <datalist id="zhlist">
             </datalist>
 
@@ -88,35 +87,32 @@
         <div class="pnbtn prev" onclick="stepleft()">&#9194;</div>
         <div class="pnbtn next" onclick="stepright()">&#9193;</div>
         <div class="imgbox3 anim" id="imgbox">
-            <img src="img/fff.svg" alt="nope" class="x3 anim" id="fon">
+            <img src="img/fff.svg" alt="nope" class="x3 anim" id="fon" data-rama-step="3">
             <img src="img/s1.svg" alt="nope" class="x1 s1 anim" id="s1" onclick="opaopa(s1)">
             <img src="img/s2.svg" alt="nope" class="x1 s2 anim" id="s2" onclick="opaopa(s2)">
             <img src="img/s3.svg" alt="nope" class="x1 s3 anim" id="s3" onclick="opaopa(s3)">
 
             <div class="sizebox" id="sizebox">
-                <input type="text" tabindex="3" class="size" name="sizes" id="levo" min="0" placeholder="лево"
-                    autocomplete="on" value="600">
-                <input type="text" tabindex="4" class="size" name="sizes" id="pravo" min="0" placeholder="право"
-                    autocomplete="on" value="600">
-                <input type="text" tabindex="1" class="size" name="sizes" id="h" min="0" placeholder="высота"
-                    autocomplete="on" value="1400">
-                <input type="text" tabindex="2" class="size" name="sizes" id="w" min="0" placeholder="ширина"
-                    autocomplete="on" value="1800">
+                <input type="text" tabindex="3" class="size" name="sizes" id="levo" min="0" placeholder="лево" autocomplete="on" value="600">
+                <input type="text" tabindex="4" class="size" name="sizes" id="pravo" min="0" placeholder="право" autocomplete="on" value="600">
+                <input type="text" tabindex="1" class="size" name="sizes" id="h" min="0" placeholder="высота" autocomplete="on" value="1400">
+                <input type="text" tabindex="2" class="size" name="sizes" id="w" min="0" placeholder="ширина" autocomplete="on" value="1800">
             </div>
 
         </div>
-        <div class="wrapper"> <!--обертка для риалтайм размеров-->
+        <div class="wrapper">
+            <!--обертка для риалтайм размеров-->
             <div class="w1 abs">
-                <div class="livesize" data-livesize="w">W1Live</div>
-                <div class="livesize" data-livesize="h">H1Live</div>
+                <div class="livesize" data-livesize="lw">W1Live</div>
+                <div class="livesize" data-livesize="lh">H1Live</div>
             </div>
             <div class="w2 abs">
-                <div class="livesize" data-livesize="w">W2Live</div>
-                <div class="livesize" data-livesize="h">H2Live</div>
+                <div class="livesize" data-livesize="mw">W2Live</div>
+                <div class="livesize" data-livesize="mh">H2Live</div>
             </div>
             <div class="w3 abs">
-                <div class="livesize" data-livesize="w">W3Live</div>
-                <div class="livesize" data-livesize="h">H3Live</div>
+                <div class="livesize" data-livesize="rw">W3Live</div>
+                <div class="livesize" data-livesize="rh">H3Live</div>
             </div>
         </div>
 
