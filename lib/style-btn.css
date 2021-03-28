@@ -95,13 +95,20 @@
     display: block;
 }
 
+.zc {
+    left: 730px;
+    top: 65px;
+}
+
+.remlast {
+    right: -30px;
+}
+
 .resetv {
     display: block;
     position: absolute;
     color: black;
     /* background-color: coral; */
-    left: 730px;
-    top: 65px;
     border-radius: 50%;
     text-align: center;
     font-size: 35px;
@@ -192,9 +199,12 @@
     list-style-position: outside;
 }
 
+
+/* ВОТ ЗДЕСЬ ВКЛЮЧИТЬ ДИСПЛЕЙ!! */
+
 .detout>details {
     flex-flow: row wrap;
-    display: flex;
+    display: none;
 }
 
 .detout>summary {
@@ -234,8 +244,8 @@
 .gridwrapper {
     display: grid;
     /* gap: 5px 10px; */
-    
 }
+
 .gridwrapper.cols {
     grid-template-columns: repeat(2, 1fr);
 }
