@@ -8,7 +8,7 @@
             "name": "Testing",
             "request": "launch",
             "type": "chrome",
-            "file": "${workspaceFolder}/test.html"
+            "file": "${workspaceFolder}/test_blank.html"
         },
         {
             "name": "Launch Chrome against localhost",

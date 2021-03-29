@@ -1,4 +1,5 @@
 @import url("./style-btn.css") screen;
+@import url("./sidepanel.css");
 body {
     background-color: beige;
     height: 820px;
@@ -233,22 +234,20 @@ select#prof:hover~select {
 .imgbox3 {
     display: block;
     position: absolute;
-    /* background-color: crimson; */
-    /* width: 375px; */
     height: 290px;
     top: 140px;
     left: 100px;
 }
 
-.imgbox2 {
+
+/* .imgbox2 {
     display: block;
     position: absolute;
-    /* width: 250px;
-    height: 290px; */
+    height: 290px; 
     top: 140px;
     left: 100px;
     background-color: teal;
-}
+} */
 
 
 /* .select-fs {

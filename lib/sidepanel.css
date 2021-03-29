@@ -1,0 +1,24 @@
+.side-cont {
+    display: block;
+    width: 550px;
+    height: 620px;
+    background-color: darkslategray;
+    overflow: auto;
+}
+
+.cfg-gridbox {
+    display: grid;
+    background-color: darkviolet;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.cfg-item {
+    display: block;
+    border: 1px solid black;
+}
+
+.cfg-item img {
+    width: 200px;
+    height: 200px;
+}
