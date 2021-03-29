@@ -23,6 +23,7 @@
         let source = "https://code.jquery.com/jquery-3.6.0.js";
         loadScript(source, script => {
             td();
+            addListener() //добавляет на поля ввода размеров возможность считать по нажатию ентера
             console.log(`>>>${script.src} LOADED!<<<`);
         });
     </script>
@@ -48,7 +49,6 @@
                     <option value="TermoPlus">Термоплюс 80мм</option>
                 </select>
                 <select name="glass-depth" id="gdepth" class="gldepth" onclick="this.style.opacity = 1">
-                    <!-- <option class="odepth" value=""></option> -->
                     <option class="odepth" value="28">28 mm</option>
                     <option class="odepth" value="24">24 mm</option>
                     <option class="odepth" value="30">30 mm</option>
@@ -60,16 +60,16 @@
                 </select>
             </div>
 
-            <div class="head-item ztypebtn" id="ztype" onclick="tt()">
+            <div class="head-item ztypebtn" id="ztype" onclick="tt()"></div>
 
-            </div>
-
-            <input type="list" tabindex="5" list="zhlist" class="head-item" name="zhlist" id="zlist" placeholder="Цвет" oninput="setgr()"><span class="resetv zc" onclick="resetvals()">&#9746;</span>
+            <input type="list" tabindex="5" list="zhlist" class="head-item" name="zhlist" id="zlist" placeholder="Цвет" oninput="setgr()">
+            <span class="resetv zc" onclick="resetvals()">&#9746;</span>
             <datalist id="zhlist">
             </datalist>
 
             <div id="zgrp" class="head-item"></div>
-            <button class="calc-btn hand-item" onclick="calc()">Calculate</button>
+
+            <button class="calc-btn hand-item" onclick="calc()" id="calc-btn">Calculate</button>
 
         </div>
     </header>
@@ -122,13 +122,13 @@
             </div>
         </div>
     </div>
-    <img src="img/reset.jpg" alt="reset" id="reset" class="resbtn" onclick="fullreset()">
     <!--кнопка СБРОС-->
-    <img src="img/devbtn.jpg" alt="reset" id="devbtn" class="resbtn" onclick="devout()">
+    <img src="img/reset.jpg" alt="reset" id="reset" class="resbtn" onclick="fullreset()">
     <!--кнопка ВЫВОД ДАННЫХ ДЛЯ РАЗРАБА-->
+    <img src="img/devbtn.jpg" alt="reset" id="devbtn" class="resbtn" onclick="devout()">
 
+    <!--контейнер для вывода данных разраба-->
     <div class="detout">
-        <!--контейнер для вывода данных разраба-->
         <details class="details-grid">
             <summary> сводка по размерам </summary>
             <div class="gridwrapper rows">
