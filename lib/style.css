@@ -575,6 +575,12 @@ div#outside>span:-moz-first-node {
     position: absolute;
 }
 
+.wrapper {
+    display: flex;
+    text-align-last: justify;
+    background-color: rgb(0, 0, 0);
+}
+
 .w1,
 .w2,
 .w3 {
@@ -593,14 +599,8 @@ div#outside>span:-moz-first-node {
     left: 380px;
 }
 
-.wrapper {
-    display: flex;
-    align-content: flex-start;
-    background-color: rgb(0, 0, 0);
-}
-
 .livesize {
-    text-align: left;
+    text-align: justify;
     cursor: default;
     opacity: .5;
 }
