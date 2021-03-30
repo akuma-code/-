@@ -16,7 +16,7 @@
 }
 
 .prev {
-    left: 100px;
+    left: 160px;
     top: 80px;
     opacity: 1;
     transition: all .4s;
@@ -25,7 +25,6 @@
 
 .prev:hover {
     font-size: 53px;
-    left: 95px;
     opacity: 1;
 }
 
@@ -42,7 +41,7 @@
 .prev:hover::before {
     position: absolute;
     content: "\23EA";
-    left: -50px;
+    left: -40px;
     opacity: .3;
     font-size: 48px;
     z-index: 1;
@@ -58,7 +57,7 @@
 }
 
 .next {
-    left: 160px;
+    left: 220px;
     top: 80px;
 }
 
@@ -73,22 +72,22 @@
 
 .next:hover {
     font-size: 53px;
-    left: 160px;
+    left: 220px;
 }
 
 .next:hover::after {
     content: "\23E9";
     opacity: .3;
-    left: 55px;
+    left: 45px;
 }
 
 .next:hover:active {
     font-size: 48px;
-    left: 160px;
+    /* left: 200px; */
 }
 
 .next:hover:active::after {
-    left: 10px;
+    left: 30px;
 }
 
 .show {
