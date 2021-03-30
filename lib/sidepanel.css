@@ -1,24 +1,55 @@
+.visblock {
+    display: block;
+    position: relative;
+    border: 1px solid red;
+    width: 200px;
+    height: 450px;
+    overflow: hidden;
+    justify-content: center;
+}
+
 .side-cont {
     display: block;
-    width: 550px;
-    height: 620px;
+    position: absolute;
     background-color: darkslategray;
     overflow: auto;
+    transition: all .7s;
+    left: 0px;
 }
 
 .cfg-gridbox {
     display: grid;
-    background-color: darkviolet;
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-columns: repeat(2, 1fr);
+    background-color: rgb(223, 181, 241);
+    width: 200px;
+    height: 450px;
+    grid-template-columns: 150px 43px;
+    row-gap: 14px;
+    column-gap: 5px;
+    place-items: stretch self-start;
 }
 
 .cfg-item {
-    display: block;
     border: 1px solid black;
 }
 
-.cfg-item img {
-    width: 200px;
-    height: 200px;
+.cfg-item:active {
+    background-color: rgba(167, 94, 199, 0.479);
+}
+
+.cfg-item.subgrid {
+    display: grid;
+    gap: 5px;
+}
+
+.cfg-item>img {
+    display: grid;
+    vertical-align: middle;
+}
+
+.cfg-btn {
+    display: inherit;
+    text-orientation: upright;
+    width: 100%;
+    height: 100%;
+    word-wrap: break-word;
 }

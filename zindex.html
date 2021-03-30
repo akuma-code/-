@@ -23,15 +23,15 @@
         let source = "https://code.jquery.com/jquery-3.6.0.js";
         loadScript(source, script => {
             td();
-            addListener() //  добавляет на поля ввода размеров возможность считать по нажатию ентера
+            addListener() // добавляет на поля ввода размеров возможность считать по нажатию ентера
             console.log(`>>>${script.src} LOADED!<<<`);
         });
     </script>
 </head>
 
 <body>
-    <h1>ЖАЛЮЗИ</h1>
-    <!-- Header: кнопки смены профильной системы, толщины ст-п, типа и цвета жалюзи а также их группа и, наконец, кнопка расчета -->
+    <h1 onclick=" reload()">ЖАЛЮЗИ</h1>
+    <!-- *Header: кнопки смены профильной системы, толщины ст-п, типа и цвета жалюзи а также их группа и, наконец, кнопка расчета -->
     <header class="head">
         <div class="headcont">
 
@@ -74,7 +74,7 @@
         </div>
     </header>
     <div class="ktype" id="korob" oninput="setgr()">
-        <!-- цвет короба-->
+        <!-- *цвет короба-->
         <input type="radio" value="white" id="whiteK" name="KorColor" checked>
         <label for="whiteK">Белый</label>
         <input type="radio" value="lamin" id="laminK" name="KorColor" class="show">
@@ -83,10 +83,10 @@
         <label for="colorK">Kоричневый/бежевый/серебро</label>
     </div>
     <div class="cont">
-        <!--контейнер для кнопок право-лево, картинки рамы и створок, ввод размеров-->
+        <!--*контейнер для кнопок право-лево, картинки рамы и створок, ввод размеров-->
         <div class="pnbtn prev" onclick="stepleft()">&#9194;</div>
         <div class="pnbtn next" onclick="stepright()">&#9193;</div>
-        <div class="imgbox3 anim" id="imgbox">
+        <div class="imgbox anim" id="imgbox">
             <img src="img/fff.svg" alt="nope" class="x3 anim" id="fon" data-rama-step="3">
             <img src="img/s1.svg" alt="nope" class="x1 s1 anim" id="s1" onclick="opaopa(s1)">
             <img src="img/s2.svg" alt="nope" class="x1 s2 anim" id="s2" onclick="opaopa(s2)">
@@ -118,16 +118,15 @@
 
         <div class="current">
             <div id="outside">
-
             </div>
         </div>
     </div>
-    <!--кнопка СБРОС-->
+    <!--!кнопка СБРОС-->
     <img src="img/reset.jpg" alt="reset" id="reset" class="resbtn" onclick="fullreset()">
-    <!--кнопка ВЫВОД ДАННЫХ ДЛЯ РАЗРАБА-->
+    <!--!кнопка ВЫВОД ДАННЫХ ДЛЯ РАЗРАБА-->
     <img src="img/devbtn.jpg" alt="reset" id="devbtn" class="resbtn" onclick="devout()">
 
-    <!--контейнер для вывода данных разраба-->
+    <!--!контейнер для вывода данных разраба-->
     <div class="detout">
         <details class="details-grid">
             <summary> сводка по размерам </summary>

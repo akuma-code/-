@@ -231,7 +231,7 @@ select#prof:hover~select {
     background-color: coral;
 }
 
-.imgbox3 {
+.imgbox {
     display: block;
     position: absolute;
     height: 290px;
@@ -338,15 +338,21 @@ select#prof:hover~select {
 
 .size {
     display: block;
-    background: rgb(213, 213, 250);
+    background: rgba(213, 213, 250, 0.8);
     width: 75px;
-    height: 1.3rem;
+    /* height: 1.3rem; */
     font-size: 1.3rem;
-    border: 2px solid black;
+    border: 1px solid black;
     z-index: 3;
     color: rgb(0, 0, 0);
     float: left;
     text-align: center;
+    transition: all .2s;
+}
+
+.size:focus {
+    background-color: rgb(15, 167, 228);
+    font-size: 1.5rem;
 }
 
 #h {

@@ -2,22 +2,38 @@
 <html>
 
 <head>
-    <script src='test.js'></script>
+    <script src='Testing/test.js'></script>
     <link rel='stylesheet' href='lib/style.css' />
     <title>sidepanel</title>
 </head>
 
 <body>
-    <div class="side-cont" id="sidepanel">
-        <div id="cfgbox" class="cfg-gridbox">
-            <div class="cfg-item"><img src="" alt="img missed!" data-cfg-step="2"></div>
-            <div class="cfg-item"><img src="img/door-clr.svg" alt="img missed!" data-cfg-step="1"></div>
-            <div class="cfg-item"><img src="" alt="img missed!" data-cfg-step="3"></div>
-            <div class="cfg-item"><img src="img/left-d-ff.svg" alt="img missed!" data-cfg-step="5"></div>
-            <div class="cfg-item"><img src="img/d-f.svg" alt="img missed!" data-cfg-step="6"></div>
-            <div class="cfg-item"><img src="img/f-d-f.svg" alt="img missed!" data-cfg-step="4"></div>
+
+    <button onclick="showside()">PushMe!</button>
+    <div class="visblock">
+        <div class="side-cont" id="sidepanel">
+            <div id="cfgbox" class="cfg-gridbox">
+                <div class="cfg-item"><img src="img/fff.svg" alt="img missed!" data-cfg-step="1" width="150px" height="115px"></div>
+                <div><button class="cfg-btn">CHOOSE</button></div>
+                <div class="cfg-item"><img src="img/left-d-ff.svg" alt="img missed!" data-cfg-step="5" width="150px" height="150px"></div>
+                <div><button class="cfg-btn">CHOOSE</button></div>
+                <div class="cfg-item"><img src="img/f-d-f.svg" alt="img missed!" data-cfg-step="4" width="150px" height="150px"></div>
+                <div><button class="cfg-btn">CHOOSE</button></div>
+            </div>
         </div>
     </div>
+
+    <script>
+        function showside() {
+            let elem = document.getElementById('sidepanel');
+            let pos = elem.style.left;
+            if (elem.style.left !== "0px") {
+                elem.style.left = "0px"
+            } else {
+                elem.style.left = "-200px"
+            }
+        }
+    </script>
 </body>
 
 </html>

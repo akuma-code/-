@@ -41,22 +41,7 @@
 		</g>
 	</g>
 </g>
-<g id="ff-r" style="display:none;">
-	<g style="display:inline;">
-		<rect x="135.8" y="0.5" style="fill:#FFFFFF;" width="249" height="289"/>
-		<path d="M384.3,1v288h-248V1H384.3 M385.3,0h-250v290h250V0L385.3,0z"/>
-	</g>
-	<g style="display:inline;">
-		<rect x="150.669" y="15.361" style="fill:#FFFFFF;" width="219.262" height="259"/>
-		<path d="M369.431,15.861v258H151.169v-258L369.431,15.861 M370.431,14.861H150.169v260h220.262V14.861L370.431,14.861z"/>
-	</g>
-	
-		<rect x="251.996" y="15.361" style="display:inline;fill:#FFFFFF;stroke:#000000;stroke-miterlimit:10;" width="17.742" height="258.571"/>
-	<line style="display:inline;fill:none;stroke:#000000;stroke-miterlimit:10;" x1="385.3" y1="0" x2="370.431" y2="14.861"/>
-	<line style="display:inline;fill:none;stroke:#000000;stroke-miterlimit:10;" x1="135.3" y1="0" x2="150.169" y2="14.861"/>
-	<line style="display:inline;fill:none;stroke:#000000;stroke-miterlimit:10;" x1="135.3" y1="290" x2="150.169" y2="274.861"/>
-	<line style="display:inline;fill:none;stroke:#000000;stroke-miterlimit:10;" x1="370.431" y1="274.861" x2="385.3" y2="290"/>
-</g>
+
 <g id="Layer_3">
 	<g>
 		<g id="f">

@@ -11,7 +11,7 @@
             "file": "${workspaceFolder}/test_blank.html"
         },
         {
-            "name": "Launch Chrome against localhost",
+            "name": "Main Page",
             "request": "launch",
             "type": "chrome",
             "file": "${workspaceFolder}/zindex.html"
