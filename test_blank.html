@@ -9,19 +9,13 @@
 
 <body>
 
-    <button onclick="showside()">PushMe!</button>
-    <div class="visblock">
-        <div class="side-cont" id="sidepanel">
-            <div id="cfgbox" class="cfg-gridbox">
-                <div class="cfg-item"><img src="img/fff.svg" alt="img missed!" data-cfg-step="1" width="150px" height="115px"></div>
-                <div><button class="cfg-btn">CHOOSE</button></div>
-                <div class="cfg-item"><img src="img/left-d-ff.svg" alt="img missed!" data-cfg-step="5" width="150px" height="150px"></div>
-                <div><button class="cfg-btn">CHOOSE</button></div>
-                <div class="cfg-item"><img src="img/f-d-f.svg" alt="img missed!" data-cfg-step="4" width="150px" height="150px"></div>
-                <div><button class="cfg-btn">CHOOSE</button></div>
-            </div>
-        </div>
+
+    <div id="cfgbox" class="cfg-gridbox">
+        <div class="cfg-item" data-cfg="fff"><span>Окно </span> </div>
+        <div class="cfg-item" data-cfg="d-ff"><span> Б/блок </span></div>
+        <div class="cfg-item" data-cfg="f-d-f"><span>Чебурашка</span></div>
     </div>
+
 
     <script>
         function showside() {
