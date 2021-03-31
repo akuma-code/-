@@ -361,6 +361,11 @@ select#prof:hover~select {
     top: -70px;
 }
 
+#h.size::after {
+    content: "height";
+    left: 10px;
+}
+
 #w {
     position: absolute;
     left: 23px;
@@ -593,15 +598,15 @@ div#outside>span:-moz-first-node {
 }
 
 .w1 {
-    left: 143px
+    left: 195px
 }
 
 .w2 {
-    left: 260px;
+    left: 325px;
 }
 
 .w3 {
-    left: 380px;
+    left: 445px;
 }
 
 .livesize {
