@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <html>
+<!--TODO  настроить вывод балк блоков-->
 
 <head>
     <link rel='stylesheet' href='lib/style.css' />
@@ -74,12 +75,12 @@
         </div>
     </header>
     <div id="cfgbox" class="cfg-gridbox">
-        <div class="cfg-item" data-cfg="fff"><span>Трешка</span> </div>
-        <div class="cfg-item" data-cfg="ff"><span> Двушка </span></div>
-        <div class="cfg-item" data-cfg="f"><span>Адынушка</span></div>
-        <div class="cfg-item" data-cfg="d-ff"><span>Б/Блок-2</span> </div>
-        <div class="cfg-item" data-cfg="d-f"><span>Б/Блок-1</span></div>
-        <div class="cfg-item" data-cfg="f-d-f"><span>Чебурашка</span></div>
+        <div class="cfg-item" data-cfg="fff" onclick="resizeWin(3)"><span>Трешка</span> </div>
+        <div class="cfg-item" data-cfg="ff" onclick="resizeWin(2)"><span> Двушка </span></div>
+        <div class="cfg-item" data-cfg="f" onclick="resizeWin(1)"><span>Адынушка</span></div>
+        <div class="cfg-item" data-not-works="true" data-cfg="d-f" onclick="resizeWin(4)"><span>Б/Блок-1</span></div>
+        <div class="cfg-item" data-not-works="true" data-cfg="d-ff" onclick="resizeWin()"><span>Б/Блок-2</span> </div>
+        <div class="cfg-item" data-not-works="true" data-cfg="f-d-f" onclick="resizeWin()"><span>Чебурашка</span></div>
     </div>
 
     <div class="ktype" id="korob" oninput="setgr()">
@@ -95,8 +96,8 @@
         <!--*контейнер для кнопок право-лево, картинки рамы и створок, ввод размеров-->
         <div class="pnbtn prev" onclick="stepleft()">&#9194;</div>
         <div class="pnbtn next" onclick="stepright()">&#9193;</div>
-        <div class="imgbox anim" id="imgbox">
-            <img src="img/fff.svg" alt="nope" class="x3 anim" id="fon" data-rama-step="3">
+        <div class="imgbox" id="imgbox">
+            <img src="img/fff.svg" alt="nope" class="x3" id="fon" data-rama-step="3">
             <img src="img/s1.svg" alt="nope" class="x1 s1 anim" id="s1" onclick="opaopa(s1)">
             <img src="img/s2.svg" alt="nope" class="x1 s2 anim" id="s2" onclick="opaopa(s2)">
             <img src="img/s3.svg" alt="nope" class="x1 s3 anim" id="s3" onclick="opaopa(s3)">

@@ -236,7 +236,7 @@ select#prof:hover~select {
     position: absolute;
     height: 290px;
     top: 140px;
-    left: 160px;
+    left: 245px;
 }
 
 
@@ -313,11 +313,6 @@ select#prof:hover~select {
 .anim {
     transition-property: all;
     transition-duration: .3s;
-}
-
-#fon.anim {
-    transition-property: right;
-    transition-duration: 1s;
 }
 
 .fff {
@@ -598,15 +593,15 @@ div#outside>span:-moz-first-node {
 }
 
 .w1 {
-    left: 195px
+    left: 280px
 }
 
 .w2 {
-    left: 325px;
+    left: 410px;
 }
 
 .w3 {
-    left: 445px;
+    left: 530px;
 }
 
 .livesize {

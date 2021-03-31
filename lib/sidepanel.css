@@ -79,3 +79,11 @@
 .cfg-item:active:focus {
     border: none;
 }
+
+.cfg-item[data-not-works="true"] {
+    background-color: rgba(219, 26, 26, 0.575);
+}
+
+.cfg-item[data-not-works="true"]:hover {
+    cursor: not-allowed;
+}
