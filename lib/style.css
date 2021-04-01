@@ -448,36 +448,6 @@ div#outside>span:-moz-first-node {
     position: absolute;
 }
 
-.wrapper {
-    display: flex;
-    text-align-last: justify;
-    background-color: rgb(0, 0, 0);
-}
-
-.w1,
-.w2,
-.w3 {
-    top: 190px;
-}
-
-.w1 {
-    left: 280px
-}
-
-.w2 {
-    left: 410px;
-}
-
-.w3 {
-    left: 530px;
-}
-
-.livesize {
-    text-align: justify;
-    cursor: default;
-    opacity: .5;
-}
-
 
 /* .livesize:hover:after {
     content: ":"attr(data-livesize);
