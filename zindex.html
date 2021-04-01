@@ -79,8 +79,8 @@
         <div class="cfg-item" data-cfg="ff" onclick="resizeWin(2)"><span> Двушка </span></div>
         <div class="cfg-item" data-cfg="f" onclick="resizeWin(1)"><span>Адынушка</span></div>
         <div class="cfg-item" data-not-works="true" data-cfg="d-f" onclick="resizeWin(4)"><span>Б/Блок-1</span></div>
-        <div class="cfg-item" data-not-works="true" data-cfg="d-ff" onclick="resizeWin()"><span>Б/Блок-2</span> </div>
-        <div class="cfg-item" data-not-works="true" data-cfg="f-d-f" onclick="resizeWin()"><span>Чебурашка</span></div>
+        <div class="cfg-item" data-not-works="true" data-cfg="d-ff" onclick="resizeWin(5)"><span>Б/Блок-2</span> </div>
+        <div class="cfg-item" data-not-works="true" data-cfg="f-d-f" onclick="resizeWin(6)"><span>Чебурашка</span></div>
     </div>
 
     <div class="ktype" id="korob" oninput="setgr()">
@@ -96,17 +96,22 @@
         <!--*контейнер для кнопок право-лево, картинки рамы и створок, ввод размеров-->
         <div class="pnbtn prev" onclick="stepleft()">&#9194;</div>
         <div class="pnbtn next" onclick="stepright()">&#9193;</div>
-        <div class="imgbox" id="imgbox">
-            <img src="img/fff.svg" alt="nope" class="x3" id="fon" data-rama-step="3">
-            <img src="img/s1.svg" alt="nope" class="x1 s1 anim" id="s1" onclick="opaopa(s1)">
-            <img src="img/s2.svg" alt="nope" class="x1 s2 anim" id="s2" onclick="opaopa(s2)">
-            <img src="img/s3.svg" alt="nope" class="x1 s3 anim" id="s3" onclick="opaopa(s3)">
+        <!--! BACKGROUNF FON IMG-->
+        <div class="imgbox" id="imgbox" data-isbb="false" data-rama-step="3">
+            <img src="img/fff.svg" alt="nope" class="fon" id="fon" data-rama-step="3">
+            <img src="img/s1.svg" alt="nope" class="s1 anim" id="s1" onclick="opaopa(s1)">
+            <img src="img/s2.svg" alt="nope" class="s2 anim" id="s2" onclick="opaopa(s2)">
+            <img src="img/s3.svg" alt="nope" class="s3 anim" id="s3" onclick="opaopa(s3)">
 
             <div class="sizebox" id="sizebox">
                 <input type="text" tabindex="3" class="size" name="sizes" id="levo" min="0" placeholder="лево" autocomplete="on" value="600">
                 <input type="text" tabindex="4" class="size" name="sizes" id="pravo" min="0" placeholder="право" autocomplete="on" value="600">
                 <input type="text" tabindex="1" class="size" name="sizes" id="h" min="0" placeholder="высота" autocomplete="on" value="1400">
                 <input type="text" tabindex="2" class="size" name="sizes" id="w" min="0" placeholder="ширина" autocomplete="on" value="1800">
+                <input type="text" tabindex="6" class="size" name="sizes" id="hpr" min="0" placeholder="высота пр" autocomplete="on" value="1400">
+                <input type="text" tabindex="7" class="size" name="sizes" id="hlv" min="0" placeholder="высота лев" autocomplete="on" value="1400">
+                <input type="text" tabindex="8" class="size" name="sizes" id="wlv" min="0" placeholder="ширина лев" autocomplete="on" value="700">
+                <input type="text" tabindex="5" class="size" name="sizes" id="himp" min="0" placeholder="высота импоста" autocomplete="on" value="800">
             </div>
 
         </div>
