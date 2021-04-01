@@ -1,4 +1,6 @@
-@import url("./style-btn.css") screen;
+@import url("./style-btn.css");
+@import url("./sidepanel.css");
+@import url("./style-fon.css");
 body {
     background-color: beige;
     height: 820px;
@@ -230,95 +232,9 @@ select#prof:hover~select {
     background-color: coral;
 }
 
-.imgbox3 {
-    display: block;
-    position: absolute;
-    /* background-color: crimson; */
-    /* width: 375px; */
-    height: 290px;
-    top: 140px;
-    left: 100px;
-}
-
-.imgbox2 {
-    display: block;
-    position: absolute;
-    /* width: 250px;
-    height: 290px; */
-    top: 140px;
-    left: 100px;
-    background-color: teal;
-}
-
-
-/* .select-fs {
-    display: block;
-    background-color: rgb(111, 107, 139);
-    height: 1rem;
-    width: 33%;
-    outline: 2px solid rgb(0, 0, 0);
-    text-align: center;
-    justify-self: center;
-    border-radius: 20%;
-    z-index: 2;
-} */
-
-.x1 {
-    display: block;
-    position: absolute;
-    width: 125px;
-    height: 290px;
-    top: 0px;
-}
-
-.x2 {
-    display: block;
-    position: absolute;
-    width: 250px;
-    height: 290px;
-    top: 0px;
-}
-
-.x3 {
-    display: block;
-    position: absolute;
-    /* width: 375px;
-    height: 290px; */
-    top: 0px;
-}
-
-.s1 {
-    left: 0px;
-    opacity: 0;
-    cursor: pointer;
-}
-
-.s2 {
-    left: 125px;
-    opacity: 0;
-    cursor: pointer;
-}
-
-.s3 {
-    left: 250px;
-    opacity: 0;
-    cursor: pointer;
-}
-
-#s1:hover,
-#s2:hover,
-#s3:hover {
-    opacity: .3;
-}
-
 .anim {
     transition-property: all;
     transition-duration: .3s;
-}
-
-#fon.anim {
-    transition-property: right;
-    transition-duration: 1s;
 }
 
 .fff {
@@ -327,49 +243,6 @@ select#prof:hover~select {
 
 .sfs {
     opacity: 0;
-}
-
-.sizebox {
-    display: block;
-    position: relative;
-    top: 200px;
-    /* height: 1.3rem; */
-    text-align: center;
-}
-
-.size {
-    display: block;
-    background: rgb(213, 213, 250);
-    width: 75px;
-    height: 1.3rem;
-    font-size: 1.3rem;
-    border: 2px solid black;
-    z-index: 3;
-    color: rgb(0, 0, 0);
-    float: left;
-    text-align: center;
-}
-
-#h {
-    position: absolute;
-    left: -93px;
-    top: -70px;
-}
-
-#w {
-    position: absolute;
-    left: 23px;
-    top: 105px;
-}
-
-#pravo {
-    position: relative;
-    left: 188px;
-}
-
-#levo {
-    position: relative;
-    left: 23px
 }
 
 h3>b,
@@ -588,15 +461,15 @@ div#outside>span:-moz-first-node {
 }
 
 .w1 {
-    left: 143px
+    left: 280px
 }
 
 .w2 {
-    left: 260px;
+    left: 410px;
 }
 
 .w3 {
-    left: 380px;
+    left: 530px;
 }
 
 .livesize {

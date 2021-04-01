@@ -1,0 +1,283 @@
+.imgbox {
+    display: block;
+    position: relative;
+    top: 140px;
+    left: 245px;
+}
+
+.fon {
+    display: block;
+    position: absolute;
+    width: 375px;
+    height: 290px;
+    top: 0px;
+}
+
+.s1 {
+    left: 0px;
+    opacity: 0;
+    position: absolute;
+    cursor: pointer;
+}
+
+.s2 {
+    left: 125px;
+    opacity: 0;
+    position: absolute;
+    cursor: pointer;
+}
+
+.s3 {
+    opacity: 0;
+    position: absolute;
+    left: 250px;
+    cursor: pointer;
+}
+
+.imgbox[data-rama-step="1"] #s1,
+.imgbox[data-rama-step="2"] #s1,
+.imgbox[data-rama-step="3"] #s1 {
+    display: block;
+    left: 0px;
+    height: 290px;
+}
+
+.imgbox[data-rama-step="4"] #s1 {
+    display: none;
+    left: 0px;
+}
+
+.imgbox[data-rama-step="5"] #s1 {
+    display: block;
+    left: 150px;
+    top: 5px;
+    height: 280px;
+}
+
+.imgbox[data-rama-step="6"] #s1 {
+    display: block;
+    left: 5px;
+    top: 5px;
+    height: 280px;
+}
+
+.imgbox[data-rama-step="1"] #s2 {
+    display: none;
+    left: 125px;
+    width: 125px;
+    height: 290px;
+    top: 0px;
+}
+
+.imgbox[data-rama-step="2"] #s2,
+.imgbox[data-rama-step="3"] #s2 {
+    display: block;
+    left: 125px;
+    width: 125px;
+    height: 290px;
+    top: 0px;
+}
+
+.imgbox[data-rama-step="4"] #s2 {
+    display: block;
+    left: 155px;
+    top: 5px;
+    width: 130px;
+    height: 280px;
+}
+
+.imgbox[data-rama-step="5"] #s2 {
+    display: block;
+    left: 270px;
+    top: 5px;
+    width: 125px;
+    height: 280px;
+}
+
+.imgbox[data-rama-step="6"] #s2 {
+    display: none;
+}
+
+.imgbox[data-rama-step="1"] #s3,
+.imgbox[data-rama-step="2"] #s3,
+.imgbox[data-rama-step="5"] #s3,
+.imgbox[data-rama-step="4"] #s3 {
+    display: none;
+    left: 250px;
+}
+
+.imgbox[data-rama-step="3"] #s3 {
+    display: block;
+    left: 250px;
+}
+
+.imgbox[data-rama-step="6"] #s3 {
+    display: block;
+    left: 288px;
+    top: 5px;
+    height: 280px;
+}
+
+#s1:hover,
+#s2:hover,
+#s3:hover {
+    opacity: .3;
+}
+
+.sizebox {
+    display: block;
+    position: relative;
+}
+
+.size {
+    position: absolute;
+    background: rgba(213, 213, 250, 0.8);
+    width: 75px;
+    font-size: 1.3rem;
+    border: 1px solid black;
+    z-index: 3;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    transition: all .2s;
+}
+
+.size:focus {
+    background-color: rgb(15, 167, 228);
+    font-size: 1.5rem;
+}
+
+.imgbox[data-rama-step="1"] #h,
+.imgbox[data-rama-step="2"] #h,
+.imgbox[data-rama-step="3"] #h {
+    left: -93px;
+    top: 130px;
+}
+
+.imgbox[data-rama-step="5"] #h,
+.imgbox[data-rama-step="4"] #h {
+    left: -95px;
+    top: 130px;
+}
+
+.imgbox[data-rama-step="6"] #h {
+    display: block;
+    top: 30px;
+    left: 167px;
+}
+
+.imgbox[data-rama-step="1"] #w,
+.imgbox[data-rama-step="2"] #w,
+.imgbox[data-rama-step="3"] #w {
+    left: 23px;
+    top: 305px;
+}
+
+.imgbox[data-rama-step="4"] #w {
+    left: 40px;
+    top: 425px;
+}
+
+.imgbox[data-rama-step="5"] #w {
+    left: 40px;
+    top: 425px;
+}
+
+.imgbox[data-rama-step="6"] #w {
+    left: 167px;
+    top: 425px;
+}
+
+.imgbox[data-rama-step="1"] #pravo,
+.imgbox[data-rama-step="2"] #pravo {
+    display: none;
+}
+
+.imgbox[data-rama-step="3"] #pravo {
+    display: block;
+    left: 272px;
+    top: 230px;
+}
+
+.imgbox[data-rama-step="4"] #pravo {
+    display: block;
+    left: 180px;
+    top: 300px;
+}
+
+.imgbox[data-rama-step="5"] #pravo {
+    display: block;
+    left: 292px;
+    top: 225px;
+}
+
+.imgbox[data-rama-step="6"] #pravo {
+    display: block;
+    left: 310px;
+    top: 290px;
+}
+
+.imgbox[data-rama-step="1"] #levo,
+.imgbox[data-rama-step="2"] #levo,
+.imgbox[data-rama-step="3"] #levo {
+    position: absolute;
+    left: 23px;
+    top: 230px;
+}
+
+.imgbox[data-rama-step="4"] #levo {
+    display: none;
+}
+
+.imgbox[data-rama-step="5"] #levo {
+    display: block;
+    left: 240px;
+    top: 300px;
+}
+
+.imgbox[data-rama-step="6"] #levo {
+    display: block;
+    left: 30px;
+    top: 290px;
+}
+
+.imgbox[data-isbb="false"] #hpr,
+.imgbox[data-isbb="false"] #hlv,
+.imgbox[data-isbb="false"] #wlv,
+.imgbox[data-isbb="false"] #himp {
+    display: none;
+}
+
+.imgbox[data-isbb="true"] #hpr,
+.imgbox[data-isbb="true"] #hlv,
+.imgbox[data-isbb="true"] #wlv,
+.imgbox[data-isbb="true"] #himp {
+    display: block;
+}
+
+.imgbox[data-rama-step="4"] #hpr {
+    display: block;
+    top: 130px;
+    left: 300px;
+}
+
+.imgbox[data-rama-step="5"] #hpr {
+    display: block;
+    top: 130px;
+    left: 400px;
+}
+
+.imgbox[data-rama-step="6"] #hpr {
+    display: block;
+    top: 30px;
+    left: 425px;
+}
+
+.imgbox[data-rama-step="5"] #hlv {
+    display: none;
+}
+
+.imgbox[data-rama-step="6"] #hlv {
+    display: block;
+    top: 30px;
+    left: -90px;
+}
