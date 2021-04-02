@@ -388,6 +388,8 @@ strong {
     cursor: pointer;
     font-size: 25px;
     color: white;
+    transition: transform .6s;
+    backface-visibility: visible;
 }
 
 .ztypebtn:hover {
