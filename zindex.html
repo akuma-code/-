@@ -25,7 +25,7 @@
         let source = "https://code.jquery.com/jquery-3.6.0.js";
         loadScript(source, script => {
             td();
-            addListener() // добавляет на поля ввода размеров возможность считать по нажатию ентера
+            addListener(); // добавляет на поля ввода размеров возможность считать по нажатию ентера
             console.log(`>>>${script.src} LOADED!<<<`);
         });
     </script>
@@ -100,10 +100,10 @@
         <!--! BACKGROUNF FON IMG-->
         <div class="imgbox" id="imgbox" data-isbb="false" data-rama-step="3">
             <img src="img/fff.svg" alt="nope" class="fon" id="fon" data-rama-step="3">
-            <img src="img/s3.svg" alt="nope" class="s1 anim" id="s1" onclick="opaopa(s1)">
-            <img src="img/s3.svg" alt="nope" class="s2 anim" id="s2" onclick="opaopa(s2)">
-            <img src="img/s3.svg" alt="nope" class="s3 anim" id="s3" onclick="opaopa(s3)">
-            <img src="img/door-imp.svg" alt="nope" class="sd anim" id="sd" onclick="opaopa(sd)">
+            <img src="img/s3.svg" alt="nope" class="s1 anim" id="s1" onclick="opaopa(s1)" data-isfix="0">
+            <img src="img/s3.svg" alt="nope" class="s2 anim" id="s2" onclick="opaopa(s2)" data-isfix="0">
+            <img src="img/s3.svg" alt="nope" class="s3 anim" id="s3" onclick="opaopa(s3)" data-isfix="0">
+            <img src="img/door-imp.svg" alt="nope" class="sd anim" id="sd" onclick="opaopa(sd)" data-isfix="0">
 
             <div class="sizebox" id="sizebox">
                 <input type="text" tabindex="3" class="size" name="sizes" id="levo" min="0" placeholder="лево" autocomplete="on" value="600">
@@ -112,7 +112,6 @@
                 <input type="text" tabindex="2" class="size" name="sizes" id="w" min="0" placeholder="ширина" autocomplete="on" value="1800">
                 <input type="text" tabindex="6" class="size" name="sizes" id="hpr" min="0" placeholder="высота пр" autocomplete="on" value="1400">
                 <input type="text" tabindex="7" class="size" name="sizes" id="hlv" min="0" placeholder="высота лев" autocomplete="on" value="1400">
-                <!-- <input type="text" tabindex="8" class="size" name="sizes" id="wlv" min="0" placeholder="ширина лев" autocomplete="on" value="700"> -->
                 <input type="text" tabindex="5" class="size" name="sizes" id="himp" min="0" placeholder="высота импоста" autocomplete="on" value="800">
             </div>
 
