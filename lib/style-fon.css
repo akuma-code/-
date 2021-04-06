@@ -222,7 +222,10 @@
     top: 290px;
 }
 
-.imgbox[data-rama-step="1"] #levo,
+.imgbox[data-rama-step="1"] #levo {
+    display: none;
+}
+
 .imgbox[data-rama-step="2"] #levo,
 .imgbox[data-rama-step="3"] #levo {
     position: absolute;
