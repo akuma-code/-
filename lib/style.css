@@ -24,9 +24,10 @@ body {
 }
 
 .current {
-    display: flex;
-    flex: 65%;
-    flex-flow: column nowrap;
+    display: block;
+    right: 0;
+    position: absolute;
+    /* flex-flow: column nowrap; */
     /* border-left: 3px double coral; */
     /* border-right: 3px double coral; */
     overflow-y: auto;
@@ -307,11 +308,6 @@ strong {
     box-shadow: indigo;
 }
 
-#outside {
-    display: block;
-    width: fit-content;
-}
-
 #outside>th {
     background-color: chocolate;
     font-size: 1rem;
@@ -388,7 +384,7 @@ strong {
     cursor: pointer;
     font-size: 25px;
     color: white;
-    transition: transform .6s;
+    transition: all .5s;
     backface-visibility: visible;
 }
 
@@ -406,9 +402,32 @@ strong {
 }
 
 #outside {
+    display: block;
+    /* flex-flow: row nowrap; */
     margin-top: 5px;
     margin-right: 2px;
-    align-self: flex-end;
+    max-height: 800px;
+}
+
+.cls-out {
+    display: flex;
+    flex-flow: column wrap;
+    background-color: rgb(252, 118, 8);
+    width: 200px;
+}
+
+.cls-out>div {
+    display: flex;
+    font-size: 15px;
+    border-bottom: 2px solid black;
+    margin-bottom: 4px;
+    width: 200px;
+    justify-content: center;
+}
+
+.cls-out span {
+    font-size: large;
+    font-weight: bold;
 }
 
 #zgrp {
