@@ -4,7 +4,7 @@
 body {
     background-color: beige;
     height: 820px;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .cont {
@@ -27,17 +27,9 @@ body {
     display: block;
     right: 0;
     position: absolute;
-    /* flex-flow: column nowrap; */
-    /* border-left: 3px double coral; */
-    /* border-right: 3px double coral; */
     overflow-y: auto;
-    margin-top: 6px;
+    margin-top: 2px;
 }
-
-
-/* div:hover {
-    outline: 2px solid rgb(7, 228, 7);
-} */
 
 div.profcont {
     background-color: gray;
@@ -47,132 +39,21 @@ div.profcont {
 
 .profcont {
     flex-flow: column nowrap;
-    /* flex: 1 1 33%; */
-    /* outline: 1px solid black; */
     height: 40px;
-    /* width: 85px; */
     overflow: hidden;
     border: none;
-    transition-property: left background-color;
+    transition-property: all;
     transition-duration: 1s;
     border-radius: 10px;
     top: 10px;
 }
 
 .stvani {
-    transition-property: left background-color;
+    transition-property: all;
     transition-duration: 1s;
 }
 
-.lr-btn {
-    position: relative;
-    display: inline-block;
-    width: 300px;
-    height: 25px;
-    left: -150px;
-}
-
-.arrow-btn {
-    display: block;
-    position: absolute;
-    background-color: coral;
-    transition: all .5s;
-}
-
-#leftarrow {
-    left: 370px;
-    top: 0px;
-    height: 40px;
-    width: 140px;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    cursor: pointer;
-    text-align: center;
-}
-
-.arrow-btn>p2 {
-    position: absolute;
-    top: 10px;
-    left: 40px;
-}
-
-#rightarrow {
-    right: 265px;
-    top: 0px;
-    height: 40px;
-    width: 140px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    cursor: pointer;
-}
-
-.btncont {
-    /* outline: 1px solid black; */
-    display: block;
-    position: absolute;
-    height: 20px;
-    width: 70px;
-    overflow: hidden;
-    left: 520px;
-    font-weight: bold;
-    top: 10px;
-}
-
-#leftarrow span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
-}
-
-#leftarrow span::before {
-    content: '\21D0';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    left: 25px;
-    transition: 0.5s;
-    font-size: 15px;
-}
-
-#leftarrow:hover span {
-    padding-left: 0px;
-}
-
-#leftarrow:hover span::before {
-    opacity: 1;
-    left: -25px;
-}
-
-#rightarrow span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
-}
-
-#rightarrow span:after {
-    content: '\21D2';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: 25px;
-    transition: 0.5s;
-}
-
-#rightarrow:hover span {
-    padding-right: 3px;
-}
-
-#rightarrow:hover span:after {
-    opacity: 1;
-    right: -25px;
-}
-
 .calc-btn {
-    /* display: flex; */
-    /* height: 50px; */
-    /* width: 100%; */
     flex: 1 1 25%;
     border-radius: 10px;
     background-color: coral;
@@ -274,14 +155,15 @@ strong {
     position: relative;
 }
 
-#outside th,
+
+/* #outside th,
 #outside>td {
     border: 1px solid black;
     text-align: center;
 }
 
 .zs {
-    /* background-color: hotpink; */
+    /* background-color: hotpink; 
     border-collapse: collapse;
     border-style: inset;
     border-width: 1px;
@@ -290,7 +172,7 @@ strong {
     border-top-width: 1px;
     border-bottom-width: 1px;
     width: 25%;
-}
+} */
 
 .m-ceil:hover {
     background-color: khaki;
@@ -308,18 +190,24 @@ strong {
     box-shadow: indigo;
 }
 
-#outside>th {
+
+/* #outside>th {
     background-color: chocolate;
     font-size: 1rem;
-}
+} */
 
-#outside>th::first-line {
+
+/* #outside>th::first-line {
     font-size: 18px;
     color: rgb(30, 30, 73);
     /* font-family: fantasy; */
-    font-style: oblique;
-    /* letter-spacing: 10px; */
-}
+
+
+/* font-style: oblique; */
+
+
+/* letter-spacing: 10px; 
+} */
 
 .config>h3::first-letter {
     font-size: 15px;
@@ -412,14 +300,15 @@ strong {
 .cls-out {
     display: flex;
     flex-flow: column wrap;
-    background-color: rgb(252, 118, 8);
+    background-color: chocolate;
     width: 200px;
+    border-radius: 15px;
+    margin: 4px auto;
 }
 
 .cls-out>div {
     display: flex;
-    font-size: 15px;
-    border-bottom: 2px solid black;
+    /* border-bottom: 2px solid black; */
     margin-bottom: 4px;
     width: 200px;
     justify-content: center;
@@ -428,6 +317,21 @@ strong {
 .cls-out span {
     font-size: large;
     font-weight: bold;
+}
+
+.sysline {
+    font-size: 25px;
+}
+
+.colorline {
+    font-size: 20px;
+    border-bottom: 1px solid black;
+    border-top: 1px double black;
+    flex-wrap: nowrap;
+}
+
+.sizeline {
+    font-size: 17px;
 }
 
 #zgrp {
