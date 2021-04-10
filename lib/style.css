@@ -319,18 +319,18 @@ strong {
     font-weight: bold;
 }
 
-.sysline {
+.sys-line {
     font-size: 25px;
 }
 
-.colorline {
+.color-line {
     font-size: 20px;
     border-bottom: 1px solid black;
     border-top: 1px double black;
     flex-wrap: nowrap;
 }
 
-.sizeline {
+.size-line {
     font-size: 17px;
 }
 
