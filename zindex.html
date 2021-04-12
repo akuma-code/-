@@ -1,9 +1,10 @@
 <!DOCTYPE HTML>
 <html>
-<!--TODO: запилить логику для б\б-->
+<!---->
 
 <head>
     <link rel='stylesheet' href='lib/style.css' />
+    <script src="test.js"></script>
     <script src="lib/global.js"></script>
     <script src='lib/main.js'></script>
     <script src="lib/sizeHandler.js"></script>
@@ -38,7 +39,7 @@
         <div class="headcont">
 
             <div class="head-item">
-                <select name="veka" id="prof" oninput="td()">
+                <select name="veka" id="prof" oninput="td()" data-taken-system="value">
                     <option value="Proline">Proline Comfort 70мм</option>
                     <option value="Softline">Softline ComfortPlus 70мм</option>
                     <option value="Euroline">Euroline 58мм</option>
@@ -50,7 +51,7 @@
                     <option value="Lux">Люкс 70мм</option>
                     <option value="TermoPlus">Термоплюс 80мм</option>
                 </select>
-                <select name="glass-depth" id="gdepth" class="gldepth" onclick="this.style.opacity = 1">
+                <select name="glass-depth" id="gdepth" class="gldepth" onclick="this.style.opacity = 1" data-taken-system="value">
                     <option class="odepth" value="28">28 mm</option>
                     <option class="odepth" value="24">24 mm</option>
                     <option class="odepth" value="30">30 mm</option>
@@ -62,9 +63,9 @@
                 </select>
             </div>
 
-            <div class="head-item ztypebtn" id="ztype" onclick="tt()"></div>
+            <div class="head-item ztypebtn" id="ztype" onclick="tt()" data-zpool="innetText"></div>
 
-            <input type="list" tabindex="5" list="zhlist" class="head-item" name="zhlist" id="zlist" placeholder="Цвет" oninput="setgr()">
+            <input type="list" tabindex="5" list="zhlist" class="head-item" name="zhlist" id="zlist" placeholder="Цвет" oninput="setgr()" data-zpool="value">
             <span class="resetv zc" onclick="resetvals()">&#9746;</span>
             <datalist id="zhlist">
             </datalist>
@@ -97,7 +98,7 @@
     <div class="cont" id="maincont">
 
         <!--! BACKGROUNF FON IMG-->
-        <div class="imgbox" id="imgbox" data-isbb="false" data-rama-step="3">
+        <div class="imgbox" id="imgbox" data-isbb="false" data-rama-step="3" data-taken="[data-rama-step]">
             <img src="img/fff.svg" alt="nope" class="fon" id="fon" data-rama-step="3" wintype="fff">
             <img src="img/s3.svg" alt="nope" class="s1 anim" id="s1" onclick="opaopa(s1)" data-isfix="0">
             <img src="img/s3.svg" alt="nope" class="s2 anim" id="s2" onclick="opaopa(s2)" data-isfix="0">
