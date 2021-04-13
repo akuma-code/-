@@ -298,6 +298,10 @@
     top: 310px;
 }
 
+#mid {
+    display: none;
+}
+
 .wrapper {
     display: flex;
     text-align-last: right;
