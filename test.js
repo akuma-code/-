@@ -1,3 +1,11 @@
+//! ================================================================ Вспомогательный класс, одиночное стекло==========================//
+class GLS {
+    constructor(w, h) {
+        this.w = w;
+        this.h = h;
+    }
+}
+
 function mapItAll() {
     let sizepool = document.getElementsByClassName("size");
     let fixpool = document.querySelectorAll("[data-isfix]");
@@ -115,15 +123,10 @@ function go() {
 
 
     let gl_number = wt.length;
-    console.log({ gl_number });
+    let output;
 
-    let g_t1 = GlHolder.g_t1;
-    let g_t2 = GlHolder.g_t2;
-    let G1 = new Stv("levo", "h").single;
-    let G2 = new Stv("mid", "h").single;
-    let G3 = new Stv("pravo", "h").single;
 
-    return cleararr
+    return output
 }
 
 
@@ -159,7 +162,12 @@ class Stv {
         this.h = document.getElementById(idh).value;
     }
 
-    get single() {
-        return [this.w, this.h]
+    get g() {
+        return new GLS(this.w, this.h)
     }
+}
+
+function setglass(map) {
+    return new GLS(map.get("w"), map.get("h"))
+
 }
