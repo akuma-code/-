@@ -1,9 +1,21 @@
 //! ================================================================ Вспомогательный класс, одиночное стекло==========================//
 class GLS {
-    constructor(w, h) {
-        this.w = w;
-        this.h = h;
-    }
+    constructor(w = 0, h = 0) {
+            this.w = w;
+            this.h = h;
+            // this.storage = new Map();
+
+        }
+        //     store(key, itemGLS) {
+        //         return this.storage.set(key, itemGLS)
+        //     }
+        //     multi(numb = 1) {
+        // 
+        //         while (numb = 1) {
+        //             this.store(numb, this)
+        //         }
+        //         const output;
+        //     }
 }
 
 function mapItAll() {
@@ -79,9 +91,7 @@ function g_tselect(id1, id2, id3) {
 
     let g_t1 = GlHolder.g_t1;
     let g_t2 = GlHolder.g_t2;
-    let G1 = new Stv("levo", "h").single;
-    let G2 = new Stv("mid", "h").single;
-    let G3 = new Stv("pravo", "h").single;
+
 
 
     let f = [
@@ -110,7 +120,6 @@ function go() {
 
     //!----------<<<-----------[Array.H, Array.W]------------->>>-------------//
 
-    let idpool = win_cfg.wt[wt];
     let sizes = document.getElementsByClassName("size");
     let hp = new Map();
     let wp = new Map();
@@ -120,6 +129,16 @@ function go() {
     };
     let cleararr = [Array.from(wp.values()), Array.from(hp.values())];
     //!----------<<<------------------------>>>-------------//
+
+    //!----------<<<-----------[fix id pool]------------->>>-------------//
+    let idfixpool = new Map();
+    win_cfg.idfix[wt].forEach(function(value, index) {
+        idfixpool.set(`id${index+1}`, value);
+    })
+    console.log(idfixpool.entries());
+    //!----------<<<-----------idfixpool------------->>>-------------//
+
+    let deltapool = new Map();
 
 
     let gl_number = wt.length;
@@ -133,7 +152,7 @@ function go() {
 
 
 const win_cfg = {
-    wt: {
+    idfix: {
         f: ["s1"],
         ff: ["s1", "s2"],
         fff: ["s1", "s2", "s3"],
@@ -145,29 +164,63 @@ const win_cfg = {
         f: ["w"],
         ff: ["levo", "w"],
         fff: ["levo", "mid", "pravo"],
+        df: ["w", "levo"],
+        dff: ["w", "levo", "pravo"],
+        fdf: ["levo", "w", "pravo"],
     },
     idh: {
-        f: ["h", "h", "h"],
-        ff: ["h", "h", "h"],
+        f: ["h"],
+        ff: ["h", "h"],
         fff: ["h", "h", "h"],
+        df: ["h", "hpr"],
+        dff: ["h", "hpr", "hpr"],
+        fdf: ["hlv", "h", "hpr"],
     }
 
 }
 
 //!----------<<<-----------РАМА ПОЛУЧАЮЩАЯ ПО ИД РАЗМЕР------------->>>-------------//
 
-class Stv {
+class StvId {
     constructor(idw, idh) {
-        this.w = document.getElementById(idw).value || document.getElementById(idw).dataset.calcedvalue;
+        this.w = document.getElementById(idw).value;
         this.h = document.getElementById(idh).value;
     }
 
-    get g() {
-        return new GLS(this.w, this.h)
+    // || document.getElementById(idw).dataset.calcedvalue
+
+
+    get add(w = this.w, h = this.h) {
+        let gls = new GLS(w, h)
+        return gls
     }
+
+
 }
 
 function setglass(map) {
     return new GLS(map.get("w"), map.get("h"))
 
 }
+class GL_conteiner {
+    constructor() {
+        this.storage = new Map();
+
+    }
+    store(key, itemGLS) {
+        return this.storage.set(key, itemGLS)
+    }
+    out(key) {
+        return this.storage.get(key)
+    }
+    multi(numb = 1, obj) {
+
+        while (numb === 1) {
+            this.out(numb);
+            numb--
+        }
+        let output = (Object.fromEntries(this.storage.entries()));
+        return output
+    }
+}
+//TODO: сделать метод для создания n объектов(стекол)
