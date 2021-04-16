@@ -8,46 +8,52 @@ class GLS {
         this.w = w;
         this.h = h;
     }
+    get arr() {
+        return [this.w, this.h]
+    }
+    applyDelta(delta, gls = this.arr) {
+        if (gls.length !== delta.length) console.log(`разная длинна массивов ${gls.length} : ${delta.length}`);
+        let out = [];
+        out.length = 0;
+        for (let i = 0; i < gls.length; i++) {
+            out.push([gls[i] - delta[i]])
+        };
+        return out
+    }
 }
-//! === Контейнер для типов стекла в раме
-const Gl_type = {
+
+
+//! === Контейнер для выбора дельты стекла в зависимости от положения в раме
+const Delta_selector = {
     //! === glass type 0 === [r-r] -> рама-рама
-    rr: {
-        sys() { return document.getElementById('prof').value },
-        dH(idfix) {
-            if (idfix === "0") return Delta[this.sys()].d_rr()
-            return Delta[this.sys()].d_rs()
-        },
-        dW(idfix) {
-            if (idfix === "0") return Delta[this.sys()].d_rr()
-            return Delta[this.sys()].d_rs()
-        }
+    rr(isfix) {
+        if (isfix > 1 || isfix < 0) { return console.log(`Неверный isfix, указан: ${isfix}`) };
+
+        function sys() { return document.getElementById('prof').value };
+        dH = (isfix) ? SizeDB[sys()].d_rr() : SizeDB[sys()].d_rs();
+        dW = (isfix) ? SizeDB[sys()].d_rr() : SizeDB[sys()].d_rs();
+        return [Math.floor(dW), Math.floor(dH)]
+
     },
 
     //! === glass type 1 === [r-i] -> рама - импост
-    ri: {
-        sys() { return document.getElementById('prof').value },
-        dH(idfix) {
-            if (idfix === "0") return Delta[this.sys()].d_rr()
-            return Delta[this.sys()].d_rs()
-        },
-        dW(idfix) {
-            if (idfix === "0") return Delta[this.sys()].d_ri()
-            return Delta[this.sys()].sisi()
-        }
+    ri(isfix) {
+        if (isfix > 1 || isfix < 0) { return console.log(`Неверный isfix, указан: ${isfix}`) };
+
+        function sys() { return document.getElementById('prof').value };
+        dH = (isfix) ? SizeDB[sys()].d_rr() : SizeDB[sys()].d_rs();
+        dW = (isfix) ? SizeDB[sys()].d_ri() : SizeDB[sys()].d_sisr();
+        return [Math.floor(dW), Math.floor(dH)]
     },
 
     //! === glass type 2 === [i-i] -> импост - импост
-    ii: {
-        sys() { return document.getElementById('prof').value },
-        dH(idfix) {
-            if (idfix === "0") return Delta[this.sys()].d_rr()
-            return Delta[this.sys()].d_rs()
-        },
-        dW(idfix) {
-            if (idfix === "0") return Delta[this.sys()].d_ii()
-            return Delta[this.sys()].d_sisi()
-        }
+    ii(isfix) {
+        if (isfix > 1 || isfix < 0) { return console.log(`Неверный isfix, указан: ${isfix}`) };
+
+        function sys() { return document.getElementById('prof').value };
+        dH = (isfix) ? SizeDB[sys()].d_rr() : SizeDB[sys()].d_rs();
+        dW = (isfix) ? SizeDB[sys()].d_ii() : SizeDB[sys()].d_sisi();
+        return [Math.floor(dW), Math.floor(dH)]
     },
 
 }
@@ -58,8 +64,8 @@ class CurrentRama {
     constructor() {
         this.wintype = document.getElementById('fon').getAttribute("wintype")
     }
-    f = [Gl_type.rr]
-    ff = [Gl_type.ri, Gl_type.ri]
+    f = [Delta_selector.rr]
+    ff = [Delta_selector.ri, Delta_selector.ri]
 
 }
 
@@ -117,23 +123,23 @@ function g_tselect(id1, id2, id3) {
         g_t1: {
             sys: document.getElementById('prof').value,
             vd(idfix) {
-                if (idfix === "0") return Delta[this.sys].d_rr()
-                return Delta[this.sys].d_rs()
+                if (idfix === "0") return SizeDB[this.sys].d_rr()
+                return SizeDB[this.sys].d_rs()
             },
             hd(idfix) {
-                if (idfix === "0") return Delta[this.sys].d_ri()
-                return Delta[this.sys].sisi()
+                if (idfix === "0") return SizeDB[this.sys].d_ri()
+                return SizeDB[this.sys].sisi()
             }
         },
         g_t2: {
             sys: document.getElementById('prof').value,
             vd(idfix) {
-                if (idfix === "0") return Delta[this.sys].d_rr()
-                return Delta[this.sys].d_rs()
+                if (idfix === "0") return SizeDB[this.sys].d_rr()
+                return SizeDB[this.sys].d_rs()
             },
             hd(idfix) {
-                if (idfix === "0") return Delta[this.sys].d_ii()
-                return Delta[this.sys].d_sisi()
+                if (idfix === "0") return SizeDB[this.sys].d_ii()
+                return SizeDB[this.sys].d_sisi()
             }
         },
 
