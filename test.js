@@ -1,22 +1,97 @@
+/*//? FIXME: сделано: класс стекло-пустышка, контейнер типов стекол(для каждого типа задана дельта рама-створка-импост), функции для получения размеров, массива елементов
+  //? FIXME: которые надо проверять на наличие створки
+  //? TODO: сделать: класс или функцию, которая будет отвечать за создание комплекта стекол под каждую раму
+*/
 //! ================================================================ Вспомогательный класс, одиночное стекло==========================//
 class GLS {
-    constructor(w = 0, h = 0) {
-            this.w = w;
-            this.h = h;
-            // this.storage = new Map();
-
-        }
-        //     store(key, itemGLS) {
-        //         return this.storage.set(key, itemGLS)
-        //     }
-        //     multi(numb = 1) {
-        // 
-        //         while (numb = 1) {
-        //             this.store(numb, this)
-        //         }
-        //         const output;
-        //     }
+    constructor(w = null, h = null) {
+        this.w = w;
+        this.h = h;
+    }
 }
+//! === Контейнер для типов стекла в раме
+const Gl_type = {
+    //! === glass type 0 === [r-r] -> рама-рама
+    rr: {
+        sys() { return document.getElementById('prof').value },
+        dH(idfix) {
+            if (idfix === "0") return Delta[this.sys()].d_rr()
+            return Delta[this.sys()].d_rs()
+        },
+        dW(idfix) {
+            if (idfix === "0") return Delta[this.sys()].d_rr()
+            return Delta[this.sys()].d_rs()
+        }
+    },
+
+    //! === glass type 1 === [r-i] -> рама - импост
+    ri: {
+        sys() { return document.getElementById('prof').value },
+        dH(idfix) {
+            if (idfix === "0") return Delta[this.sys()].d_rr()
+            return Delta[this.sys()].d_rs()
+        },
+        dW(idfix) {
+            if (idfix === "0") return Delta[this.sys()].d_ri()
+            return Delta[this.sys()].sisi()
+        }
+    },
+
+    //! === glass type 2 === [i-i] -> импост - импост
+    ii: {
+        sys() { return document.getElementById('prof').value },
+        dH(idfix) {
+            if (idfix === "0") return Delta[this.sys()].d_rr()
+            return Delta[this.sys()].d_rs()
+        },
+        dW(idfix) {
+            if (idfix === "0") return Delta[this.sys()].d_ii()
+            return Delta[this.sys()].d_sisi()
+        }
+    },
+
+}
+
+//! FIXME: придумать, как лучше сделать чтобы массив используемых стекол можно было использовать... для начала надо понять, как из него получать массив значений
+class CurrentRama {
+
+    constructor() {
+        this.wintype = document.getElementById('fon').getAttribute("wintype")
+    }
+    f = [Gl_type.rr]
+    ff = [Gl_type.ri, Gl_type.ri]
+
+}
+
+const IdSelector = {
+    fix: {
+        f: ["s1"],
+        ff: ["s1", "s2"],
+        fff: ["s1", "s2", "s3"],
+        df: ["sd", "s1"],
+        dff: ["sd", "s1", "s3"],
+        fdf: ["s1", "sd", "s3"],
+    },
+    idw: {
+        f: ["w"],
+        ff: ["levo", "w"],
+        fff: ["levo", "mid", "pravo"],
+        df: ["w", "levo"],
+        dff: ["w", "levo", "pravo"],
+        fdf: ["levo", "w", "pravo"],
+    },
+    idh: {
+        f: ["h"],
+        ff: ["h", "h"],
+        fff: ["h", "h", "h"],
+        df: ["h", "hpr"],
+        dff: ["h", "hpr", "hpr"],
+        fdf: ["hlv", "h", "hpr"],
+    }
+
+}
+
+
 
 function mapItAll() {
     let sizepool = document.getElementsByClassName("size");
@@ -112,30 +187,35 @@ function g_tselect(id1, id2, id3) {
 
 
 function go() {
-    let id1 = document.getElementById('s1').dataset.isfix;
-    let id2 = document.getElementById('s2').dataset.isfix;
-    let id3 = document.getElementById('s3').dataset.isfix;
-    let sys = document.getElementById('prof').value;
+
     let wt = document.getElementById('fon').getAttribute("wintype");
 
-    //!----------<<<-----------[Array.H, Array.W]------------->>>-------------//
+    //!----------<<<-----------[Array.H, Array.W, objects]------------->>>-------------//
 
     let sizes = document.getElementsByClassName("size");
     let hp = new Map();
     let wp = new Map();
     for (const size of sizes) {
-        if (win_cfg.idw[wt].includes(size.id)) wp.set(`${size.id}`, `${+size.value || +size.dataset.calcedvalue}`);
-        if (win_cfg.idh[wt].includes(size.id)) hp.set(`${size.id}`, `${+size.value || +size.dataset.calcedvalue}`);
+        if (IdSelector.idw[wt].includes(size.id)) wp.set(`${size.id}`, `${+size.value || +size.dataset.calcedvalue}`);
+        if (IdSelector.idh[wt].includes(size.id)) hp.set(`${size.id}`, `${+size.value || +size.dataset.calcedvalue}`);
     };
-    let cleararr = [Array.from(wp.values()), Array.from(hp.values())];
-    //!----------<<<------------------------>>>-------------//
+    let sizepool = [
+        [Array.from(wp.values())],
+        [Array.from(hp.values())]
+    ];
+    let hobj = Object.fromEntries(hp.entries())
+    let wobj = Object.fromEntries(wp.entries())
+        //!----------<<<------------------------>>>-------------//
 
     //!----------<<<-----------[fix id pool]------------->>>-------------//
     let idfixpool = new Map();
-    win_cfg.idfix[wt].forEach(function(value, index) {
+    IdSelector.fix[wt].forEach(function(value, index) {
         idfixpool.set(`id${index+1}`, value);
     })
-    console.log(idfixpool.entries());
+    let idfix = Object.fromEntries(idfixpool.entries());
+    console.log(idfix);
+    console.log(hobj);
+    console.log(wobj);
     //!----------<<<-----------idfixpool------------->>>-------------//
 
     let deltapool = new Map();
@@ -145,39 +225,13 @@ function go() {
     let output;
 
 
-    return output
+    // return [sizepool, idfix]
 }
 
 
 
 
-const win_cfg = {
-    idfix: {
-        f: ["s1"],
-        ff: ["s1", "s2"],
-        fff: ["s1", "s2", "s3"],
-        df: ["sd", "s1"],
-        dff: ["sd", "s1", "s3"],
-        fdf: ["s1", "sd", "s3"],
-    },
-    idw: {
-        f: ["w"],
-        ff: ["levo", "w"],
-        fff: ["levo", "mid", "pravo"],
-        df: ["w", "levo"],
-        dff: ["w", "levo", "pravo"],
-        fdf: ["levo", "w", "pravo"],
-    },
-    idh: {
-        f: ["h"],
-        ff: ["h", "h"],
-        fff: ["h", "h", "h"],
-        df: ["h", "hpr"],
-        dff: ["h", "hpr", "hpr"],
-        fdf: ["hlv", "h", "hpr"],
-    }
 
-}
 
 //!----------<<<-----------РАМА ПОЛУЧАЮЩАЯ ПО ИД РАЗМЕР------------->>>-------------//
 
@@ -190,7 +244,7 @@ class StvId {
     // || document.getElementById(idw).dataset.calcedvalue
 
 
-    get add(w = this.w, h = this.h) {
+    add(w = this.w, h = this.h) {
         let gls = new GLS(w, h)
         return gls
     }
