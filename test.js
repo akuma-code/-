@@ -11,6 +11,12 @@ class GLS {
     get arr() {
         return [this.w, this.h]
     }
+
+    get obj() {
+        return { w: this.w, h: this.h }
+    }
+
+
     applyDelta(delta, gls = this.arr) {
         if (gls.length !== delta.length) console.log(`разная длинна массивов ${gls.length} : ${delta.length}`);
         let out = [];
@@ -93,15 +99,16 @@ function getSizes() {
 
 class MainSelector {
     check(id) {
-        let fix = +document.getElementById(id).dataset.isfix;
-        console.log(`id: ${id}, isfix: ${fix}`);
-        return fix
+        let elem = +document.getElementById(id).dataset.isfix;
+        let output = (elem === 1) ? "Фикса" : "Створка";
+        setTimeout(() => console.log(`id: ${id}(${output})`), 1);
+        return elem
     }
     f(sizepool = getSizes()) {
         let g_left;
         g_left = new GLS(sizepool[0][0], sizepool[1][0]);
         return [
-            g_left.applyDelta(Delta_selector.rr(this.check(IdSelector.fix.f[0])))
+            g_left.applyDelta(Delta_selector.rr(this.check("s1")))
         ]
     }
     ff(sizepool = getSizes()) {
@@ -109,33 +116,39 @@ class MainSelector {
         g_left = new GLS(sizepool[0][0], sizepool[1][0]);
         g_right = new GLS(sizepool[0][1] - sizepool[0][0], sizepool[1][0]);
         return [
-            g_left.applyDelta(Delta_selector.ri(this.check(IdSelector.fix.ff[0]))),
-            g_right.applyDelta(Delta_selector.ri(this.check(IdSelector.fix.ff[1])))
+            g_left.applyDelta(Delta_selector.ri(this.check("s1"))),
+            g_right.applyDelta(Delta_selector.ri(this.check("s2")))
         ]
     }
     fff(sizepool = getSizes()) {
-        let fix = IdSelector.fix.fff;
+        let fix = IdSelector;
         let g_left, g_mid, g_right;
         g_left = new GLS(sizepool[0][0], sizepool[1][0]);
         g_right = new GLS(sizepool[0][1], sizepool[1][0]);
         g_mid = new GLS(sizepool[0][2], sizepool[1][0]);
         return [
-            g_left.applyDelta(Delta_selector.ri(this.check(fix[0]))),
-            g_mid.applyDelta(Delta_selector.ii(this.check(fix[1]))),
-            g_right.applyDelta(Delta_selector.ri(this.check(fix[2])))
+            g_left.applyDelta(Delta_selector.ri(this.check("s1"))),
+            g_mid.applyDelta(Delta_selector.ii(this.check("s2"))),
+            g_right.applyDelta(Delta_selector.ri(this.check("s3")))
         ]
     }
 }
 
 const IdSelector = {
-    fix: {
-        f: ["s1"],
-        ff: ["s1", "s2"],
-        fff: ["s1", "s2", "s3"],
-        df: ["sd", "s1"],
-        dff: ["sd", "s1", "s3"],
-        fdf: ["s1", "sd", "s3"],
-    },
+    // fix_id: {
+    //     s1: "s1",
+    //     s2: "s2",
+    //     s3: "s3",
+    //     sd: "sd",
+    // },
+    // fix: {
+    //     f: ["s1"],
+    //     ff: ["s1", "s2"],
+    //     fff: ["s1", "s2", "s3"],
+    //     df: ["sd", "s1"],
+    //     dff: ["sd", "s1", "s3"],
+    //     fdf: ["s1", "sd", "s3"],
+    // },
     idw: {
         f: ["w"],
         ff: ["levo", "w"],
