@@ -18,55 +18,113 @@ class GLS {
         for (let i = 0; i < gls.length; i++) {
             out.push([gls[i] - delta[i]])
         };
-        return out
+        return out.join(",").split(",")
     }
 }
 
 
 //! === Контейнер для выбора дельты стекла в зависимости от положения в раме
-const Delta_selector = {
+let Delta_selector = {
     //! === glass type 0 === [r-r] -> рама-рама
+    sys() { return document.getElementById('prof').value },
     rr(isfix) {
-        if (isfix > 1 || isfix < 0) { return console.log(`Неверный isfix, указан: ${isfix}`) };
+        if (isfix > 1 || isfix < 0) { return console.log(`Неверный isfix_rr, указан: ${isfix}`) };
 
-        function sys() { return document.getElementById('prof').value };
-        dH = (isfix) ? SizeDB[sys()].d_rr() : SizeDB[sys()].d_rs();
-        dW = (isfix) ? SizeDB[sys()].d_rr() : SizeDB[sys()].d_rs();
+        dH = (isfix) ? SizeDB.d_rr(this.sys()) : SizeDB.d_rs(this.sys()); //! доделать!
+        dW = (isfix) ? SizeDB.d_rr(this.sys()) : SizeDB.d_rs(this.sys());
         return [Math.floor(dW), Math.floor(dH)]
 
     },
 
     //! === glass type 1 === [r-i] -> рама - импост
     ri(isfix) {
-        if (isfix > 1 || isfix < 0) { return console.log(`Неверный isfix, указан: ${isfix}`) };
+        if (isfix > 1 || isfix < 0) { return console.log(`Неверный isfix_ri, указан: ${isfix}`) };
 
-        function sys() { return document.getElementById('prof').value };
-        dH = (isfix) ? SizeDB[sys()].d_rr() : SizeDB[sys()].d_rs();
-        dW = (isfix) ? SizeDB[sys()].d_ri() : SizeDB[sys()].d_sisr();
+        dH = (isfix) ? SizeDB.d_rr(this.sys()) : SizeDB.d_rs(this.sys());
+        dW = (isfix) ? SizeDB.d_ri(this.sys()) : SizeDB.d_sisr(this.sys());
         return [Math.floor(dW), Math.floor(dH)]
     },
 
     //! === glass type 2 === [i-i] -> импост - импост
     ii(isfix) {
-        if (isfix > 1 || isfix < 0) { return console.log(`Неверный isfix, указан: ${isfix}`) };
+        if (isfix > 1 || isfix < 0) { return console.log(`Неверный isfix_ii, указан: ${isfix}`) };
 
-        function sys() { return document.getElementById('prof').value };
-        dH = (isfix) ? SizeDB[sys()].d_rr() : SizeDB[sys()].d_rs();
-        dW = (isfix) ? SizeDB[sys()].d_ii() : SizeDB[sys()].d_sisi();
+        dH = (isfix) ? SizeDB.d_rr(this.sys()) : SizeDB.d_rs(this.sys());
+        dW = (isfix) ? SizeDB.d_ii(this.sys()) : SizeDB.d_sisi(this.sys());
         return [Math.floor(dW), Math.floor(dH)]
     },
 
 }
 
-//! FIXME: придумать, как лучше сделать чтобы массив используемых стекол можно было использовать... для начала надо понять, как из него получать массив значений
-class CurrentRama {
 
-    constructor() {
-        this.wintype = document.getElementById('fon').getAttribute("wintype")
+//!TODO: заработало, доделать!!
+function gonow() {
+    let wintype = document.getElementById('fon').getAttribute('wintype');
+    const glasses = new MainSelector()[wintype]();
+    for (const glass of glasses) {
+        console.log(glass);
     }
-    f = [Delta_selector.rr]
-    ff = [Delta_selector.ri, Delta_selector.ri]
 
+
+
+
+
+}
+
+function getSizes() {
+    //!----------<<<-----------[Array.H, Array.W, objects]------------->>>-------------//
+
+
+    let wt = document.getElementById('fon').getAttribute("wintype");
+    let sizes = document.getElementsByClassName("size");
+    let hp = new Map();
+    let wp = new Map();
+    for (const size of sizes) {
+        if (IdSelector.idw[wt].includes(size.id)) wp.set(`${size.id}`, `${+size.value}`);
+        if (IdSelector.idh[wt].includes(size.id)) hp.set(`${size.id}`, `${+size.value}`);
+    };
+    let sizepool = [
+        Array.from(wp.values()),
+        Array.from(hp.values())
+    ];
+    return sizepool
+}
+
+
+class MainSelector {
+    check(id) {
+        let fix = +document.getElementById(id).dataset.isfix;
+        console.log(`id: ${id}, isfix: ${fix}`);
+        return fix
+    }
+    f(sizepool = getSizes()) {
+        let g_left;
+        g_left = new GLS(sizepool[0][0], sizepool[1][0]);
+        return [
+            g_left.applyDelta(Delta_selector.rr(this.check(IdSelector.fix.f[0])))
+        ]
+    }
+    ff(sizepool = getSizes()) {
+        let g_left, g_right;
+        g_left = new GLS(sizepool[0][0], sizepool[1][0]);
+        g_right = new GLS(sizepool[0][1] - sizepool[0][0], sizepool[1][0]);
+        return [
+            g_left.applyDelta(Delta_selector.ri(this.check(IdSelector.fix.ff[0]))),
+            g_right.applyDelta(Delta_selector.ri(this.check(IdSelector.fix.ff[1])))
+        ]
+    }
+    fff(sizepool = getSizes()) {
+        let fix = IdSelector.fix.fff;
+        let g_left, g_mid, g_right;
+        g_left = new GLS(sizepool[0][0], sizepool[1][0]);
+        g_right = new GLS(sizepool[0][1], sizepool[1][0]);
+        g_mid = new GLS(sizepool[0][2], sizepool[1][0]);
+        return [
+            g_left.applyDelta(Delta_selector.ri(this.check(fix[0]))),
+            g_mid.applyDelta(Delta_selector.ii(this.check(fix[1]))),
+            g_right.applyDelta(Delta_selector.ri(this.check(fix[2])))
+        ]
+    }
 }
 
 const IdSelector = {
@@ -99,97 +157,6 @@ const IdSelector = {
 
 
 
-function mapItAll() {
-    let sizepool = document.getElementsByClassName("size");
-    let fixpool = document.querySelectorAll("[data-isfix]");
-    let zpool = document.querySelectorAll("[data-zpool]");
-    let systempool = document.querySelectorAll("[data-taken-system]");
-    let datataken = document.querySelectorAll("[data-taken]");
-    let wintype = document.getElementById('fon').getAttribute("wintype");
-    let sizemap = new Map();
-    for (const size of sizepool) {
-        if (Rama.use[wintype].includes(size.id)) sizemap.set(`${size.id}`, `${+size.value}`);
-    };
-    return sizemap
-
-
-
-}
-
-function g_tselect(id1, id2, id3) {
-
-    const GlHolder = {
-
-        g_t1: {
-            sys: document.getElementById('prof').value,
-            vd(idfix) {
-                if (idfix === "0") return SizeDB[this.sys].d_rr()
-                return SizeDB[this.sys].d_rs()
-            },
-            hd(idfix) {
-                if (idfix === "0") return SizeDB[this.sys].d_ri()
-                return SizeDB[this.sys].sisi()
-            }
-        },
-        g_t2: {
-            sys: document.getElementById('prof').value,
-            vd(idfix) {
-                if (idfix === "0") return SizeDB[this.sys].d_rr()
-                return SizeDB[this.sys].d_rs()
-            },
-            hd(idfix) {
-                if (idfix === "0") return SizeDB[this.sys].d_ii()
-                return SizeDB[this.sys].d_sisi()
-            }
-        },
-
-
-    }
-
-
-    //     let sys = document.getElementById('prof').value;
-    // 
-    //     let g_t1 = {
-    //         vert(idfix) {
-    //             if (idfix === "0") return Delta[sys].d_rr()
-    //             return Delta[sys].d_rs()
-    //         },
-    //         hor(idfix) {
-    //             if (idfix === "0") return Delta[sys].d_ri()
-    //             return Delta[sys].sisi()
-    //         }
-    //     };
-    //     let g_t2 = {
-    //         vert(idfix) {
-    //             if (idfix === "0") return Delta[sys].d_rr()
-    //             return Delta[sys].d_rs()
-    //         },
-    //         hor(idfix) {
-    //             if (idfix === "0") return Delta[sys].d_ii()
-    //             return Delta[sys].d_sisi()
-    //         }
-    //     };
-
-    let g_t1 = GlHolder.g_t1;
-    let g_t2 = GlHolder.g_t2;
-
-
-
-    let f = [
-        [g_t1.hd(id1), g_t1.vd(id1)],
-    ];
-    let ff = [
-        [g_t1.hd(id1), g_t1.vd(id1)],
-        [g_t2.hd(id2), g_t2.vd(id2)],
-    ];
-    let fff = [
-        [g_t1.hd(id1), g_t1.vd(id1)],
-        [g_t2.hd(id2), g_t2.vd(id2)],
-        [g_t1.hd(id3), g_t1.vd(id3)],
-    ];
-
-
-};
 
 
 function go() {
@@ -202,12 +169,12 @@ function go() {
     let hp = new Map();
     let wp = new Map();
     for (const size of sizes) {
-        if (IdSelector.idw[wt].includes(size.id)) wp.set(`${size.id}`, `${+size.value || +size.dataset.calcedvalue}`);
-        if (IdSelector.idh[wt].includes(size.id)) hp.set(`${size.id}`, `${+size.value || +size.dataset.calcedvalue}`);
+        if (IdSelector.idw[wt].includes(size.id)) wp.set(`${size.id}`, `${+size.value}`);
+        if (IdSelector.idh[wt].includes(size.id)) hp.set(`${size.id}`, `${+size.value}`);
     };
     let sizepool = [
-        [Array.from(wp.values())],
-        [Array.from(hp.values())]
+        Array.from(wp.values()),
+        Array.from(hp.values())
     ];
     let hobj = Object.fromEntries(hp.entries())
     let wobj = Object.fromEntries(wp.entries())
@@ -219,22 +186,19 @@ function go() {
         idfixpool.set(`id${index+1}`, value);
     })
     let idfix = Object.fromEntries(idfixpool.entries());
-    console.log(idfix);
-    console.log(hobj);
-    console.log(wobj);
+    // console.log(idfix);
+    // console.log(hobj);
+    // console.log(wobj);
     //!----------<<<-----------idfixpool------------->>>-------------//
 
-    let deltapool = new Map();
 
 
-    let gl_number = wt.length;
-    let output;
 
 
-    // return [sizepool, idfix]
+
+
+    return sizepool
 }
-
-
 
 
 
@@ -258,10 +222,7 @@ class StvId {
 
 }
 
-function setglass(map) {
-    return new GLS(map.get("w"), map.get("h"))
 
-}
 class GL_conteiner {
     constructor() {
         this.storage = new Map();
