@@ -18,13 +18,27 @@ class GLS {
 
 
     applyDelta(delta, gls = this.arr) {
-        if (gls.length !== delta.length) console.log(`разная длинна массивов ${gls.length} : ${delta.length}`);
+            if (gls.length !== delta.length) console.log(`разная длинна массивов ${gls.length} : ${delta.length}`);
+            let out = [];
+            out.length = 0;
+            for (let i = 0; i < gls.length; i++) {
+                out.push([gls[i] - delta[i]])
+            };
+            return out.join(",").split(",")
+        }
+        //!----------<<<-----------  это в отдельную функцию вынести------------->>>-------------//
+
+    applyZs(glasses = this.arr) {
+        let dep = document.getElementById('gdepth').value;
+        let sys = document.getElementById('prof').value;
+        let zw, zh;
+        let dz = (ztype == "Rollite") ? SizeDB[sys]["rd" + dep] : SizeDB[sys].idpt;
+        [zw, zh] = dz;
         let out = [];
-        out.length = 0;
-        for (let i = 0; i < gls.length; i++) {
-            out.push([gls[i] - delta[i]])
-        };
-        return out.join(",").split(",")
+        for (const glass of glasses) {
+            out.push(glass[0] - zw, glass[1] - zh)
+        }
+        return console.log(out);
     }
 }
 
@@ -80,7 +94,7 @@ function gonow() {
 function getSizes() {
     //!----------<<<-----------[Array.H, Array.W, objects]------------->>>-------------//
 
-
+    document.getElementById('mid').value = document.getElementById('w').value - document.getElementById('levo').value - document.getElementById('pravo').value;
     let wt = document.getElementById('fon').getAttribute("wintype");
     let sizes = document.getElementsByClassName("size");
     let hp = new Map();
@@ -135,20 +149,6 @@ class MainSelector {
 }
 
 const IdSelector = {
-    // fix_id: {
-    //     s1: "s1",
-    //     s2: "s2",
-    //     s3: "s3",
-    //     sd: "sd",
-    // },
-    // fix: {
-    //     f: ["s1"],
-    //     ff: ["s1", "s2"],
-    //     fff: ["s1", "s2", "s3"],
-    //     df: ["sd", "s1"],
-    //     dff: ["sd", "s1", "s3"],
-    //     fdf: ["s1", "sd", "s3"],
-    // },
     idw: {
         f: ["w"],
         ff: ["levo", "w"],
@@ -202,14 +202,6 @@ function go() {
     // console.log(idfix);
     // console.log(hobj);
     // console.log(wobj);
-    //!----------<<<-----------idfixpool------------->>>-------------//
-
-
-
-
-
-
-
     return sizepool
 }
 
