@@ -79,8 +79,8 @@ let Delta_selector = {
     door(isfix) {
         if (isfix > 1 || isfix < 0) { return console.log(`Неверный isfix_door, указан: ${isfix}`) };
 
-        dH = (isfix) ? SizeDB.d_rr(this.sys()) : SizeDB.d_rs(this.sys());
-        dW = (isfix) ? SizeDB.d_rr(this.sys()) : SizeDB.d_rs(this.sys());
+        dH = (isfix) ? SizeDB.d_doori(this.sys()) : SizeDB.d_doorf(this.sys());
+        dW = SizeDB.d_rs(this.sys());
         return [Math.floor(dW), Math.floor(dH)]
     }
 
