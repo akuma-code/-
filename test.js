@@ -164,6 +164,30 @@ class MainSelector {
             g_right.applyDelta(Delta_selector.rr(this.check("s2")))
         ]
     }
+    dff(sizepool = getSizes()) {
+        let g_door, g_right, g_left;
+        //! g_door проверяет есть в двери импост или нет
+        g_door = (this.check("sd")) ? new GLS(sizepool[0][2], sizepool[1][0]) : new GLS(sizepool[0][2], sizepool[1][0] - sizepool[1][2]);
+        g_left = new GLS(sizepool[0][0] - sizepool[0][1], sizepool[1][1]);
+        g_right = new GLS(sizepool[0][1], sizepool[1][1]);
+        return [
+            g_door.applyDelta(Delta_selector.ri(this.check("sd"))),
+            g_left.applyDelta(Delta_selector.rr(this.check("s1"))),
+            g_right.applyDelta(Delta_selector.rr(this.check("s2")))
+        ]
+    }
+    fdf(sizepool = getSizes()) {
+        let g_door, g_right, g_left;
+        //! g_door проверяет есть в двери импост или нет
+        g_left = new GLS(sizepool[0][0], sizepool[1][1]);
+        g_door = (this.check("sd")) ? new GLS(sizepool[0][2], sizepool[1][0]) : new GLS(sizepool[0][2], sizepool[1][0] - sizepool[1][3]);
+        g_right = new GLS(sizepool[0][1], sizepool[1][2]);
+        return [
+            g_left.applyDelta(Delta_selector.rr(this.check("s1"))),
+            g_door.applyDelta(Delta_selector.ri(this.check("sd"))),
+            g_right.applyDelta(Delta_selector.rr(this.check("s3")))
+        ]
+    }
 }
 
 const IdSelector = {
