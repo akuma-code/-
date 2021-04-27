@@ -79,7 +79,7 @@ let Delta_selector = {
     door(isfix) {
         if (isfix > 1 || isfix < 0) { return console.log(`Неверный isfix_door, указан: ${isfix}`) };
 
-        dH = (isfix) ? SizeDB.d_doori(this.sys()) : SizeDB.d_doorf(this.sys());
+        dH = (isfix) ? SizeDB.d_rs(this.sys()) : SizeDB.d_doori(this.sys());
         dW = SizeDB.d_rs(this.sys());
         return [Math.floor(dW), Math.floor(dH)]
     }
@@ -102,14 +102,13 @@ function gonow() {
 //!----------<<<-----------  getSizes()    ------------->>>-------------//
 function getSizes() {
 
-    // document.getElementById('mid').value = document.getElementById('w').value - document.getElementById('levo').value - document.getElementById('pravo').value;
     let wt = document.getElementById('fon').getAttribute("wintype");
     let sizes = document.getElementsByClassName("size");
     let hp = new Map();
     let wp = new Map();
     for (const size of sizes) {
-        if (IdSelector.idw[wt].includes(size.id)) wp.set(`${size.id}`, `${+size.value}`);
-        if (IdSelector.idh[wt].includes(size.id)) hp.set(`${size.id}`, `${+size.value}`);
+        if (IdSelector.idw[wt].includes(size.id)) wp.set(`${size.id}`, `${+size.value}`); //! array of Ws
+        if (IdSelector.idh[wt].includes(size.id)) hp.set(`${size.id}`, `${+size.value}`); //! array of Hs
     };
     let sizepool = [
         Array.from(wp.values()),
@@ -148,7 +147,7 @@ class MainSelector {
         g_left = new GLS(sizepool[0][0], sizepool[1][0]);
         g_right = new GLS(sizepool[0][1], sizepool[1][0]);
         g_w = new GLS(sizepool[0][2], sizepool[1][0]);
-        g_mid = new GLS(g_w.w - g_left.w - g_right.w, g_w.h)
+        g_mid = new GLS((g_w.w - g_left.w - g_right.w), g_w.h)
         return [
             g_left.applyDelta(Delta_selector.ri(this.check("s1"))),
             g_mid.applyDelta(Delta_selector.ii(this.check("s2"))),
@@ -157,8 +156,9 @@ class MainSelector {
     }
     df(sizepool = getSizes()) {
         let g_door, g_right;
-        g_door = new GLS(sizepool[0][0], sizepool[1][0]);
-        g_right = new GLS(sizepool[0][1] - sizepool[0][0], sizepool[1][0]);
+        //! g_door проверяет есть в двери импост или нет
+        g_door = (this.check("sd")) ? new GLS(sizepool[0][1], sizepool[1][0]) : new GLS(sizepool[0][1], sizepool[1][0] - sizepool[1][2]);
+        g_right = new GLS(sizepool[0][0], sizepool[1][1]);
         return [
             g_door.applyDelta(Delta_selector.ri(this.check("sd"))),
             g_right.applyDelta(Delta_selector.rr(this.check("s2")))
