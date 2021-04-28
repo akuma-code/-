@@ -2,6 +2,10 @@
   //? FIXME: которые надо проверять на наличие створки
   //? TODO: сделать: класс или функцию, которая будет отвечать за создание комплекта стекол под каждую раму
 */
+
+// import { sayhi } from './lib/template';
+// import { sayhi } from "./lib/template";
+// let sss = sayhi();
 //! ================================================================ Вспомогательный класс, одиночное стекло==========================//
 class GLS {
     constructor(w = null, h = null) {
@@ -38,7 +42,9 @@ function applyZs(glasses = []) {
     [zw, zh] = dz;
     let out = [];
     for (const glass of glasses) {
-        out.push([glass[0] - zw, glass[1] - zh])
+        out.push(
+            [glass[0] - zw, glass[1] - zh]
+        )
     }
     return out;
 }
@@ -87,16 +93,22 @@ let Delta_selector = {
 }
 
 
-//!TODO: заработало, доделать!!
+
 
 
 function gonow() {
-    let wintype = document.getElementById('fon').getAttribute('wintype');
-    let glasses = new MainSelector()[wintype]();
+    let wt = document.getElementById('fon').getAttribute('wintype');
+    let glasses = new MainSelector()[wt]();
     let zh = applyZs(glasses);
     console.log(`glasses: ${glasses}`);
     console.log(`zhaluzi: ${zh}`);
-    return { zh };
+    let out = new Outputer();
+
+    return out.toDiv(zh);
+}
+
+function sizeout(w, h) {
+    return
 }
 
 //!----------<<<-----------  getSizes()    ------------->>>-------------//
@@ -123,7 +135,7 @@ class MainSelector {
     check(id) {
         let elem = +document.getElementById(id).dataset.isfix;
         let output = (elem === 1) ? "Фикса" : "Створка";
-        setTimeout(() => console.log(`id: ${id}(${output})`), 1);
+        // setTimeout(() => console.log(`id: ${id}(${output})`), 1);
         return elem
     }
     f(sizepool = getSizes()) {
