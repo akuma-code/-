@@ -1,16 +1,17 @@
 <!DOCTYPE HTML>
 <html>
-<!--TODO: запилить логику для б\б-->
 
 <head>
     <link rel='stylesheet' href='lib/style.css' />
-    <script src="lib/global.js"></script>
+    <script src="lib/zDB.js"></script>
+    <!-- <script src="test.js"></script> -->
+    <script src="lib/Selector.js"></script>
     <script src='lib/main.js'></script>
     <script src="lib/sizeHandler.js"></script>
     <script src="lib/classes.js"></script>
     <script src="lib/classout.js"></script>
     <script src="lib/handlers.js"></script>
-    <script src="lib/q_bbHandler.js"></script>
+    <!-- <script src="lib/q_bbHandler.js"></script> -->
 
     <script>
         function loadScript(src, callback) {
@@ -26,7 +27,8 @@
         loadScript(source, script => {
             td();
             addListener(); // добавляет на поля ввода размеров возможность считать по нажатию ентера
-            console.log(`>>>${script.src} LOADED!<<<`);
+            // console.log(`>>>${script.src} LOADED!<<<`);
+            stylelog(`>>>HTML Started<<<`)
         });
     </script>
 </head>
@@ -38,7 +40,7 @@
         <div class="headcont">
 
             <div class="head-item">
-                <select name="veka" id="prof" oninput="td()">
+                <select name="veka" id="prof" oninput="td()" data-taken-system="value">
                     <option value="Proline">Proline Comfort 70мм</option>
                     <option value="Softline">Softline ComfortPlus 70мм</option>
                     <option value="Euroline">Euroline 58мм</option>
@@ -50,7 +52,7 @@
                     <option value="Lux">Люкс 70мм</option>
                     <option value="TermoPlus">Термоплюс 80мм</option>
                 </select>
-                <select name="glass-depth" id="gdepth" class="gldepth" onclick="this.style.opacity = 1">
+                <select name="glass-depth" id="gdepth" class="gldepth" onclick="this.style.opacity = 1" data-taken-system="value">
                     <option class="odepth" value="28">28 mm</option>
                     <option class="odepth" value="24">24 mm</option>
                     <option class="odepth" value="30">30 mm</option>
@@ -62,26 +64,26 @@
                 </select>
             </div>
 
-            <div class="head-item ztypebtn" id="ztype" onclick="tt()"></div>
+            <div class="head-item ztypebtn" id="ztype" onclick="tt()" data-zpool="innetText"></div>
 
-            <input type="list" tabindex="5" list="zhlist" class="head-item" name="zhlist" id="zlist" placeholder="Цвет" oninput="setgr()">
+            <input type="list" tabindex="5" list="zhlist" class="head-item" name="zhlist" id="zlist" placeholder="Цвет" oninput="setgr()" data-zpool="value">
             <span class="resetv zc" onclick="resetvals()">&#9746;</span>
             <datalist id="zhlist">
             </datalist>
 
             <div id="zgrp" class="head-item"></div>
 
-            <button class="calc-btn hand-item" onclick="run()" id="calc-btn">Calculate</button>
+            <button class="calc-btn hand-item" onclick="gonow()" id="calc-btn">Calculate</button>
 
         </div>
     </header>
     <div id="cfgbox" class="cfg-gridbox">
-        <div class="cfg-item" data-cfg="fff" onclick="resizeWin(3)"><span>Трешка</span> </div>
-        <div class="cfg-item" data-cfg="ff" onclick="resizeWin(2)"><span> Двушка </span></div>
-        <div class="cfg-item" data-cfg="f" onclick="resizeWin(1)"><span>Адынушка</span></div>
-        <div class="cfg-item" data-cfg="d-f" onclick="resizeWin(4)"><span>Б/Блок-1</span></div>
-        <div class="cfg-item" data-cfg="d-ff" onclick="resizeWin(5)"><span>Б/Блок-2</span> </div>
-        <div class="cfg-item" data-cfg="f-d-f" onclick="resizeWin(6)"><span>Чебурашка</span></div>
+        <div class="cfg-item" data-cfg="fff" onclick="resizeWin('fff')"><span>Трешка</span> </div>
+        <div class="cfg-item" data-cfg="ff" onclick="resizeWin('ff')"><span> Двушка </span></div>
+        <div class="cfg-item" data-cfg="f" onclick="resizeWin('f')"><span>Адынушка</span></div>
+        <div class="cfg-item" data-cfg="d-f" onclick="resizeWin('df')"><span>Б/Блок-1</span></div>
+        <div class="cfg-item" data-cfg="d-ff" onclick="resizeWin('dff')"><span>Б/Блок-2</span> </div>
+        <div class="cfg-item" data-cfg="f-d-f" onclick="resizeWin('fdf')"><span>Чебурашка</span></div>
     </div>
 
     <div class="ktype" id="korob" oninput="setgr()">
@@ -97,12 +99,12 @@
     <div class="cont" id="maincont">
 
         <!--! BACKGROUNF FON IMG-->
-        <div class="imgbox" id="imgbox" data-isbb="false" data-rama-step="3">
+        <div class="imgbox" id="imgbox" data-isbb="false" data-rama-step="3" data-taken="[data-rama-step]">
             <img src="img/fff.svg" alt="nope" class="fon" id="fon" data-rama-step="3" wintype="fff">
-            <img src="img/s3.svg" alt="nope" class="s1 anim" id="s1" onclick="opaopa(s1)" data-isfix="0">
-            <img src="img/s3.svg" alt="nope" class="s2 anim" id="s2" onclick="opaopa(s2)" data-isfix="0">
-            <img src="img/s3.svg" alt="nope" class="s3 anim" id="s3" onclick="opaopa(s3)" data-isfix="0">
-            <img src="img/door-imp.svg" alt="nope" class="sd anim" id="sd" onclick="opaopa(sd)" data-isfix="0">
+            <img src="img/s3.svg" alt="nope" class="s1 anim" id="s1" onclick="opaopa(s1)" data-isfix="1">
+            <img src="img/s3.svg" alt="nope" class="s2 anim" id="s2" onclick="opaopa(s2)" data-isfix="1">
+            <img src="img/s3.svg" alt="nope" class="s3 anim" id="s3" onclick="opaopa(s3)" data-isfix="1">
+            <img src="img/door-imp.svg" alt="nope" class="sd anim" id="sd" onclick="opaopa(sd)" data-isfix="1">
 
             <div class="sizebox" id="sizebox">
                 <input type="text" tabindex="3" class="size" name="sizes" id="levo" min="0" placeholder="лево" autocomplete="on" value="600">
