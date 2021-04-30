@@ -1,15 +1,22 @@
 {
-  "name": "zcalc",
-  "version": "1.0.0",
-  "description": "",
-  "main": "test.js",
-  "directories": {
-    "lib": "lib"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+    "name": "zcalc",
+    "version": "1.0.0",
+    "description": "js calc",
+    "main": "zindex.html",
+    "directories": {
+        "lib": "lib",
+        "img": "img"
+    },
+    "scripts": {
+        "test": "none",
+        "serve": "parcel zindex.html -p 3000 --open",
+        "build": "parcel build zindex.html --no-source-maps"
+
+
+    },
+    "keywords": [
+        "zcalc"
+    ],
+    "author": "akuma (akuma-code@github)",
+    "license": "ISC"
 }
