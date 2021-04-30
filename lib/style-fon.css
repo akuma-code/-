@@ -38,32 +38,32 @@
     transform: rotateY(0deg);
 }
 
-.imgbox:is([data-rama-step="1"], [data-rama-step="2"], [data-rama-step="3"]) #s1 {
+.fon:is([wintype="f"], [wintype="ff"], [wintype="fff"])~#s1 {
     display: block;
     left: 0px;
     height: 290px;
 }
 
-.imgbox[data-rama-step="4"] #s1 {
+.fon[wintype="df"]~#s1 {
     display: none;
     left: 0px;
 }
 
-.imgbox[data-rama-step="5"] #s1 {
+.fon[wintype="dff"]~#s1 {
     display: block;
     left: 153px;
     top: 5px;
     height: 280px;
 }
 
-.imgbox[data-rama-step="6"] #s1 {
+.fon[wintype="fdf"]~#s1 {
     display: block;
     left: 5px;
     top: 5px;
     height: 280px;
 }
 
-.imgbox[data-rama-step="1"] #s2 {
+.fon[wintype="ff"]~#s2 {
     display: none;
     left: 125px;
     width: 125px;
