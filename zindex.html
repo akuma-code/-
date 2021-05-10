@@ -2,12 +2,13 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
     <link rel='stylesheet' href='lib/style.css' />
-    <script src="lib/zDB.js"></script>
-    <script src="lib/Selector.js"></script>
-    <script src='lib/main.js'></script>
-    <script src="lib/classes.js"></script>
     <script src="lib/handlers.js"></script>
+    <script src='lib/main.js'></script>
+    <!-- <script src="lib/zDB.js"></script>
+    <script src="lib/Selector.js"></script>
+    <script src="lib/classes.js"></script>
     <!-- <script src="test.js"></script> -->
     <!-- <script src="lib/sizeHandler.js"></script> -->
     <!-- <script src="lib/classout.js"></script> -->
@@ -21,15 +22,13 @@
             script.crossOrigin = "anonymous";
             document.head.append(script);
             script.onload = () => callback(script);
+            stylelog(`>>>HTML Started<<<`)
         }
 
         let source = "https://code.jquery.com/jquery-3.6.0.js";
-        loadScript(source, script => {
-            td();
-            addListener(); // добавляет на поля ввода размеров возможность считать по нажатию ентера
-            // console.log(`>>>${script.src} LOADED!<<<`);
-            stylelog(`>>>HTML Started<<<`)
-        });
+        // loadScript(source, script => {
+        //     return
+        // });
     </script>
 </head>
 
@@ -160,7 +159,39 @@
 
     </div>
 
+    <script>
+        const scripts = [
+            "lib/funcprice.js",
+            "lib/priceDB.js",
+            "lib/zDB.js",
+            "lib/Selector.js",
+            "lib/classes.js",
+            // "lib/main.js",
+            // "lib/handlers.js",
+        ];
 
+        function load(src) {
+
+            let script = document.createElement("script");
+            script.src = src;
+            // script.onload = () => console.log(`${script} Loaded`);
+            document.head.append(script);
+        };
+
+
+
+        function loader() {
+            for (let i = 0; i < scripts.length; i++) {
+                load(scripts[i]);
+                console.log(`'${scripts[i]}' is ready`);
+            };
+            addListener(); // добавляет на поля ввода размеров возможность считать по нажатию ентера
+        }
+        loader()
+        stylelog("HTML IS READY")
+
+        // console.log(`>>>${script.src} LOADED!<<<`);
+    </script>
 </body>
 
 </html>
