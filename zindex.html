@@ -5,15 +5,8 @@
     <meta charset="UTF-8">
     <link rel='stylesheet' href='lib/style.css' />
     <script src="lib/handlers.js"></script>
-    <script src='lib/main.js'></script>
-    <!-- <script src="lib/zDB.js"></script>
-    <script src="lib/Selector.js"></script>
-    <script src="lib/classes.js"></script>
-    <!-- <script src="test.js"></script> -->
-    <!-- <script src="lib/sizeHandler.js"></script> -->
-    <!-- <script src="lib/classout.js"></script> -->
-    <!-- <script src="lib/q_bbHandler.js"></script> -->
-
+    <script src='lib/classes.js'></script>
+    <script src=' lib/main.js '></script>
     <script>
         function loadScript(src, callback) {
             let script = document.createElement("script");
@@ -39,8 +32,8 @@
         <div class="headcont">
 
             <div class="head-item">
-                <select name="veka" id="prof" oninput="td()" data-taken-system="value">
-                    <option value="Proline">Proline Comfort 70мм</option>
+                <select name="veka" id="prof" oninput="td()" onclick="td()">
+                    <option value="Proline" selected>Proline Comfort 70мм</option>
                     <option value="Softline">Softline ComfortPlus 70мм</option>
                     <option value="Euroline">Euroline 58мм</option>
                     <option value="Premium82">Softline Premium 82мм</option>
@@ -51,8 +44,8 @@
                     <option value="Lux">Люкс 70мм</option>
                     <option value="TermoPlus">Термоплюс 80мм</option>
                 </select>
-                <select name="glass-depth" id="gdepth" class="gldepth" onclick="this.style.opacity = 1" value="28">28 mm
-                    <option class="odepth" value="28">28 mm</option>
+                <select name="glass-depth" id="gdepth" class="gldepth" onclick="this.style.opacity = 1">
+                    <option class="odepth" value="28" selected>28 mm</option>
                     <option class="odepth" value="24">24 mm</option>
                     <option class="odepth" value="30">30 mm</option>
                     <option class="odepth" value="32">32 mm</option>
@@ -63,9 +56,9 @@
                 </select>
             </div>
 
-            <div class="head-item ztypebtn" id="ztype" onclick="tt()" data-zpool="innetText"></div>
+            <div class="head-item ztypebtn" id="ztype" onclick="tt()">Isolite</div>
 
-            <input type="list" tabindex="5" list="zhlist" class="head-item" name="zhlist" id="zlist" placeholder="Цвет" oninput="setgr()" data-zpool="value">
+            <input type="list" tabindex="5" list="zhlist" class="head-item" name="zhlist" id="zlist" placeholder="Цвет" oninput="setgr()">
             <span class="resetv zc" onclick="resetvals()">&#9746;</span>
             <datalist id="zhlist">
             </datalist>
@@ -115,22 +108,7 @@
                 <input type="text" tabindex="5" class="size" name="sizes" id="himp" min="0" placeholder="высота импоста" autocomplete="on" value="800">
             </div>
 
-            <div class="wrapper">
-                <!--обертка для риалтайм размеров-->
-                <div class="w1 abs" id="w1">
-                    <div class="livesize" data-livesize="WL"></div>
-                    <div class="livesize" data-livesize="HL"></div>
-                </div>
-                <div class="w2 abs" id="w2">
-                    <div class="livesize" data-livesize="WM"></div>
-                    <div class="livesize" data-livesize="HM"></div>
-                </div>
-                <div class="w3 abs" id="w3">
-                    <div class="livesize" data-livesize="WR"></div>
-                    <div class="livesize" data-livesize="HR"></div>
-                </div>
 
-            </div>
         </div>
 
         <div class="current">
@@ -143,21 +121,7 @@
     <!--!кнопка ВЫВОД ДАННЫХ ДЛЯ РАЗРАБА-->
     <img src="img/devbtn.jpg" alt="reset" id="devbtn" class="resbtn" onclick="devout()">
 
-    <!--!контейнер для вывода данных разраба-->
-    <div class="detout">
-        <details class="details-grid">
-            <summary> сводка по размерам </summary>
-            <div class="gridwrapper rows">
-                <div class="gridbox" id="sysout"></div>
-                <div class="gridbox" id="zhout"></div>
-            </div>
-            <div class="gridwrapper cols">
-                <div class="gridbox" id="gsout"></div>
-                <div class="gridbox" id="zsout"></div>
-            </div>
-        </details>
 
-    </div>
 
     <script>
         const scripts = [
@@ -165,7 +129,7 @@
             "lib/priceDB.js",
             "lib/zDB.js",
             "lib/Selector.js",
-            "lib/classes.js",
+            // "lib/classes.js",
             // "lib/main.js",
             // "lib/handlers.js",
         ];
@@ -183,14 +147,16 @@
         function loader() {
             for (let i = 0; i < scripts.length; i++) {
                 load(scripts[i]);
-                console.log(`'${scripts[i]}' is ready`);
             };
-            addListener(); // добавляет на поля ввода размеров возможность считать по нажатию ентера
+            console.log(`${scripts.length} scripts loaded`);
+            addListener();
         }
-        loader()
-        stylelog("HTML IS READY")
 
-        // console.log(`>>>${script.src} LOADED!<<<`);
+        loader()
+        stylelog("HTML IS READY");
+    </script>
+    <script defer>
+        td();
     </script>
 </body>
 
