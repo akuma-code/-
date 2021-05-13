@@ -5,23 +5,58 @@
     <meta charset="UTF-8">
     <link rel='stylesheet' href='lib/style.css' />
     <script src="lib/handlers.js"></script>
-    <script src='lib/classes.js'></script>
-    <script src=' lib/main.js '></script>
+    <script src='lib/SizeDB.js'></script>
+    <script src='lib/zDB.js'></script>
+    <script src='lib/animation.js'></script>
+    <script src='lib/main.js'></script>
     <script>
         function loadScript(src, callback) {
             let script = document.createElement("script");
             script.src = src;
-            script.integrity = "sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=";
-            script.crossOrigin = "anonymous";
             document.head.append(script);
             script.onload = () => callback(script);
-            stylelog(`>>>HTML Started<<<`)
+            // stylelog(`>>>HTML Started<<<`)
         }
 
-        let source = "https://code.jquery.com/jquery-3.6.0.js";
-        // loadScript(source, script => {
-        //     return
-        // });
+        let source = "lib/handlers.js";
+        loadScript(source, script => {
+            return console.log(`Done!`);
+
+        });
+    </script>
+    <script defer>
+        const scripts = [
+            "lib/funcprice.js",
+            "lib/priceDB.js",
+            "lib/Selector.js",
+            "lib/mapper.js",
+        ];
+
+        function load(src) {
+
+            let script = document.createElement("script");
+            script.src = src;
+            // script.onload = () => console.log(`${script.src} Loaded`);
+            document.head.append(script);
+        };
+
+
+
+        function loader() {
+            for (let i = 0; i < scripts.length; i++) {
+                load(scripts[i]);
+            };
+            console.log(`${scripts.length} scripts loaded`);
+
+        }
+
+        stylelog("HTML IS READY");
+    </script>
+
+    <script defer>
+        loader()
+            // td();
+            // tt()
     </script>
 </head>
 
@@ -123,40 +158,10 @@
 
 
 
-    <script defer>
-        const scripts = [
-            "lib/funcprice.js",
-            "lib/priceDB.js",
-            "lib/zDB.js",
-            "lib/Selector.js",
-            "lib/mapper.js",
-            // "lib/classes.js",
-            // "lib/main.js",
-            // "lib/handlers.js",
-        ];
-
-        function load(src) {
-
-            let script = document.createElement("script");
-            script.src = src;
-            // script.onload = () => console.log(`${script} Loaded`);
-            document.head.append(script);
-        };
-
-
-
-        function loader() {
-            for (let i = 0; i < scripts.length; i++) {
-                load(scripts[i]);
-            };
-            console.log(`${scripts.length} scripts loaded`);
-            addListener();
-        }
-
-        loader()
-        stylelog("HTML IS READY");
-    </script>
-    <script defer>
+    <script>
+        addListener();
+        tt();
+        tl();
         td();
     </script>
 </body>

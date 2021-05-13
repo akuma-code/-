@@ -279,9 +279,7 @@
     left: -90px;
 }
 
-.imgbox[data-rama-step="1"] #himp,
-.imgbox[data-rama-step="2"] #himp,
-.imgbox[data-rama-step="3"] #himp {
+.imgbox:is([data-rama-step="1"], [data-rama-step="2"], [data-rama-step="3"]) #himp {
     display: none;
 }
 
