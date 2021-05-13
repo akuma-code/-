@@ -63,15 +63,7 @@
     height: 280px;
 }
 
-.fon[wintype="ff"]~#s2 {
-    display: none;
-    left: 125px;
-    width: 125px;
-    height: 290px;
-    top: 0px;
-}
-
-.imgbox:is([data-rama-step="2"], [data-rama-step="3"]) #s2 {
+.fon:is([wintype="ff"], [wintype="fff"])~#s2 {
     display: block;
     left: 125px;
     width: 125px;
@@ -79,7 +71,16 @@
     top: 0px;
 }
 
-.imgbox[data-rama-step="4"] #s2 {
+
+/* .imgbox:is([data-rama-step="2"], [data-rama-step="3"]) #s2 {
+    display: block;
+    left: 125px;
+    width: 125px;
+    height: 290px;
+    top: 0px;
+} */
+
+.fon[wintype="df"]~#s2 {
     display: block;
     left: 155px;
     top: 5px;
@@ -88,7 +89,7 @@
     transform: rotateY(0deg);
 }
 
-.imgbox[data-rama-step="5"] #s2 {
+.fon[wintype="dff"]~#s2 {
     display: block;
     left: 270px;
     top: 5px;
@@ -97,21 +98,21 @@
     transform: rotateY(0deg);
 }
 
-.imgbox[data-rama-step="6"] #s2 {
+.fon[wintype="fdf"]~#s2 {
     display: none;
 }
 
-.imgbox:is([data-rama-step="1"], [data-rama-step="2"], [data-rama-step="5"], [data-rama-step="4"]) #s3 {
+.fon:is([wintype="f"], [wintype="ff"], [wintype="df"], [wintype="dff"])~#s3 {
     display: none;
     left: 250px;
 }
 
-.imgbox[data-rama-step="3"] #s3 {
+.fon[wintype="fff"]~#s3 {
     display: block;
     left: 250px;
 }
 
-.imgbox[data-rama-step="6"] #s3 {
+.fon[wintype="fdf"]~#s3 {
     display: block;
     left: 288px;
     top: 5px;
@@ -144,93 +145,82 @@
     font-size: 1.5rem;
 }
 
-.imgbox:is([data-rama-step="1"], [data-rama-step="2"], [data-rama-step="3"]) #h {
+.imgbox:is([wintype="f"], [wintype="ff"], [wintype="fff"]) #h {
     left: -93px;
     top: 130px;
 }
 
-.imgbox:is([data-rama-step="5"], [data-rama-step="4"]) #h {
+.imgbox:is([wintype="df"], [wintype="dff"]) #h {
     left: -95px;
     top: 130px;
 }
 
-.imgbox[data-rama-step="6"] #h {
+.imgbox[wintype="fdf"] #h {
     display: block;
     top: 80px;
     left: 167px;
 }
 
-.imgbox:is([data-rama-step="1"], [data-rama-step="2"], [data-rama-step="3"]) #w {
+.imgbox:is([wintype="f"], [wintype="ff"], [wintype="fff"]) #w {
     left: 23px;
     top: 305px;
 }
 
-.imgbox[data-rama-step="4"] #w {
+.imgbox:is([wintype="df"], [wintype="dff"]) #w {
     left: 40px;
     top: 425px;
 }
 
-.imgbox[data-rama-step="5"] #w {
-    left: 40px;
-    top: 425px;
-}
-
-.imgbox[data-rama-step="6"] #w {
+.imgbox[wintype="fdf"] #w {
     left: 167px;
     top: 425px;
 }
 
-.imgbox[data-rama-step="1"] #pravo,
-.imgbox[data-rama-step="2"] #pravo {
+.imgbox:is([wintype="f"], [wintype="ff"]) #pravo {
     display: none;
 }
 
-.imgbox[data-rama-step="3"] #pravo {
+.imgbox[wintype="fff"] #pravo {
     display: block;
     left: 272px;
     top: 230px;
 }
 
-.imgbox[data-rama-step="4"] #pravo {
+.imgbox[wintype="df"] #pravo {
     display: block;
     left: 180px;
     top: 300px;
 }
 
-.imgbox[data-rama-step="5"] #pravo {
+.imgbox[wintype="dff"] #pravo {
     display: block;
     left: 292px;
     top: 225px;
 }
 
-.imgbox[data-rama-step="6"] #pravo {
+.imgbox[wintype="fdf"] #pravo {
     display: block;
     left: 310px;
     top: 290px;
 }
 
-.imgbox[data-rama-step="1"] #levo {
+.imgbox:is([wintype="f"], [wintype="df"]) #levo {
     display: none;
 }
 
-.imgbox[data-rama-step="2"] #levo,
-.imgbox[data-rama-step="3"] #levo {
-    position: absolute;
+.imgbox:is([wintype="ff"], [wintype="fff"]) #levo {
+    /* position: absolute; */
     left: 23px;
     top: 230px;
 }
 
-.imgbox[data-rama-step="4"] #levo {
-    display: none;
-}
-
-.imgbox[data-rama-step="5"] #levo {
+.imgbox[wintype="dff"] #levo {
     display: block;
     left: 240px;
     top: 300px;
 }
 
-.imgbox[data-rama-step="6"] #levo {
+.imgbox[wintype="fdf"] #levo {
     display: block;
     left: 30px;
     top: 290px;
@@ -241,56 +231,53 @@
     display: none;
 } */
 
-.imgbox[data-rama-step="1"] #hpr,
-.imgbox[data-rama-step="2"] #hpr,
-.imgbox[data-rama-step="3"] #hpr {
+.imgbox:is([wintype="f"], [wintype="ff"], [wintype="fff"]) #hpr {
     display: none;
 }
 
-.imgbox[data-rama-step="4"] #hpr {
+.imgbox[wintype="df"] #hpr {
     display: block;
     top: 130px;
     left: 300px;
 }
 
-.imgbox[data-rama-step="5"] #hpr {
+.imgbox[wintype="dff"] #hpr {
     display: block;
     top: 130px;
     left: 400px;
 }
 
-.imgbox[data-rama-step="6"] #hpr {
+.imgbox[wintype="fdf"] #hpr {
     display: block;
     top: 80px;
     left: 425px;
 }
 
-.imgbox[data-rama-step="5"] #hlv {
+.imgbox[wintype="dff"] #hlv {
     display: none;
 }
 
-.imgbox:is([data-rama-step="1"], [data-rama-step="2"], [data-rama-step="4"], [data-rama-step="3"]) #hlv {
+.imgbox:is([wintype="f"], [wintype="ff"], [wintype="fff"], [wintype="df"]) #hlv {
     display: none;
 }
 
-.imgbox[data-rama-step="6"] #hlv {
+.imgbox[wintype="fdf"] #hlv {
     display: block;
     top: 80px;
     left: -90px;
 }
 
-.imgbox:is([data-rama-step="1"], [data-rama-step="2"], [data-rama-step="3"]) #himp {
+.imgbox:is([wintype="f"], [wintype="ff"], [wintype="fff"]) #himp {
     display: none;
 }
 
-.imgbox[data-rama-step="4"] #himp,
-.imgbox[data-rama-step="5"] #himp {
+.imgbox:is([wintype="df"], [wintype="dff"]) #himp {
     display: none;
     top: 310px;
     left: 37px;
 }
 
-.imgbox[data-rama-step="6"] #himp {
+.imgbox[wintype="fdf"] #himp {
     display: none;
     left: 165px;
     top: 310px;
@@ -304,43 +291,6 @@
     display: flex;
     text-align-last: right;
     background-color: rgb(0, 0, 0);
-}
-
-.imgbox[data-isbb="false"] .w1 {
-    left: 32px;
-    top: 30px;
-}
-
-.imgbox[data-isbb="false"] .w2 {
-    left: 158px;
-    top: 30px;
-}
-
-.imgbox[data-isbb="false"] .w3 {
-    left: 280px;
-    top: 30px;
-}
-
-.imgbox[data-isbb=true] .w1 {
-    left: 35px;
-    top: 35px;
-}
-
-.imgbox[data-isbb="true"] .w2 {
-    left: 180px;
-    top: 35px;
-}
-
-.imgbox[data-isbb="true"] .w3 {
-    left: 300px;
-    top: 35px;
-}
-
-.livesize {
-    text-align: justify;
-    cursor: default;
-    opacity: .5;
-    width: 65px;
 }
 
 .imgbox[data-isbb="false"] .sd {
@@ -361,17 +311,17 @@
     opacity: .3;
 }
 
-.imgbox[data-rama-step="4"] .sd {
+.fon[wintype="df"]~.sd {
     left: 3px;
     transform: rotateY(180deg);
 }
 
-.imgbox[data-rama-step="5"] .sd {
+.fon[wintype="dff"]~.sd {
     left: 3px;
     transform: rotateY(180deg);
 }
 
-.imgbox[data-rama-step="6"] .sd {
+.fon[wintype="fdf"]~.sd {
     left: 132px;
     transform: rotateY(0deg);
 }

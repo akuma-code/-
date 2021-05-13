@@ -1,6 +1,6 @@
+@import url("style-fon.css");
 @import url("sidepanel.css");
 @import url("style-btn.css");
-@import url("style-fon.css");
 body {
     background-color: beige;
     height: 820px;
@@ -371,6 +371,10 @@ div#outside>span:-moz-first-node {
 
 .abs {
     position: absolute;
+}
+
+.summ {
+    text-align: right;
 }
 
 
