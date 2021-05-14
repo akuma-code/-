@@ -1,6 +1,7 @@
 @import url("style-fon.css");
 @import url("sidepanel.css");
 @import url("style-btn.css");
+@import url("r_side.css");
 body {
     background-color: beige;
     height: 820px;
