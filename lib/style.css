@@ -2,6 +2,13 @@
 @import url("sidepanel.css");
 @import url("style-btn.css");
 @import url("r_side.css");
+:root {
+    --main-color: chocolate;
+    --main-bg-color: coral;
+    --border-main: 2px solid black;
+    --border-main-d: 2px dotted black;
+}
+
 body {
     background-color: beige;
     height: 820px;
@@ -378,9 +385,58 @@ div#outside>span:-moz-first-node {
     text-align: right;
 }
 
+.disc {
+    display: flex;
+    left: 805px;
+    top: 20px;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 200px;
+}
 
-/* .livesize:hover:after {
-    content: ":"attr(data-livesize);
-    color: brown;
-    text-transform: lowercase;
+#discount {
+    width: 180px;
+}
+
+#discount::after {
+    content: "90%";
+    position: absolute;
+    left: 192px;
+}
+
+#discount::before {
+    content: "0%";
+    position: absolute;
+    right: 192px;
+}
+
+.disc span {
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.disc>label {
+    background: rgba(189, 114, 28, 0.35);
+    width: 100%;
+    display: flex;
+    place-items: center;
+    justify-content: space-around;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .4s;
+}
+
+.disc>label:hover {
+    background-color: rgba(189, 114, 28, 0.75);
+}
+
+
+/* input[type="range"]#discount::-webkit-slider-runnable-track {
+    color: antiquewhite;
+    background-color: crimson;
+    height: 0.5rem;
+    
 } */

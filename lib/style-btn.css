@@ -124,9 +124,9 @@
 .resbtn {
     display: block;
     position: absolute;
-    top: 5px;
-    width: 200px;
-    height: 56px;
+    top: 15px;
+    width: 170px;
+    height: auto;
     transition: all .3s;
     cursor: pointer;
 }
@@ -139,7 +139,7 @@
 
 #reset.resbtn {
     display: none;
-    left: 800px;
+    left: 180px;
 }
 
 .resbtn:hover {
