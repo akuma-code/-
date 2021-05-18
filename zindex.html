@@ -64,7 +64,7 @@
 </head>
 
 <body>
-    <h1 onclick=" reload()">ЖАЛЮЗИ</h1>
+    <h1 onclick="reload()">ЖАЛЮЗИ</h1>
     <!-- *Header: кнопки смены профильной системы, толщины ст-п, типа и цвета жалюзи а также их группа и, наконец, кнопка расчета -->
     <header class="head">
         <div class="headcont">
@@ -108,8 +108,13 @@
 
         </div>
 
+
     </header>
 
+    <div class="disc abs">
+        <label for="discount">Скидка: 40%</label>
+        <input type="range" name="discount" id="discount" min="0" max="90" step="1" value="40">
+    </div>
 
     <div id="cfgbox" class="cfg-gridbox">
         <div class="cfg-item" data-cfg="fff" onclick="resizeWin('fff')"><span>Трешка</span> </div>
@@ -163,31 +168,15 @@
     <!--!кнопка ВЫВОД ДАННЫХ ДЛЯ РАЗРАБА-->
     <img src="img/devbtn.jpg" alt="reset" id="devbtn" class="resbtn" onclick="devout()">
 
-    <div class="rs__maincont" id="rs__grid">
-        <div class="rs__control">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, tempore aspernatur?</div>
-        <div class="rs__wrap">
-            <div class="rs__block">
-                <div class="rs__type">R</div>
-                <div class="rs__color">Price your ZZZ</div>
-                <div class="rs__disc">40%</div>
-            </div>
-            <div class="rs__block">
-                <div class="rs__type">R</div>
-                <div class="rs__color">Price your ZZZ</div>
-                <div class="rs__disc">40%</div>
-            </div>
-            <div class="rs__block">
-                <div class="rs__type">R</div>
-                <div class="rs__color">Price your ZZZ</div>
-                <div class="rs__disc">40%</div>
-            </div>
-        </div>
+    <div class="rs__maincont" id="rs__main">
+
     </div>
     <script>
         addListener();
+        td();
         tt();
         tl();
-        td();
+        showdisc();
     </script>
 </body>
 
