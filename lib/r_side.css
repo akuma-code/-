@@ -44,8 +44,16 @@
 }
 
 .rs_calc_res {
-    background-color: rgb(85, 38, 26);
+    background-color: #ffffff;
+    background-size: contain;
     grid-area: res;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 100%;
+}
+
+.rs_out.bb {
+    border-bottom: 2px double black;
 }
 
 .rs_size {
