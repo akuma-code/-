@@ -31,6 +31,7 @@
             "lib/priceDB.js",
             "lib/Selector.js",
             "lib/mapper.js",
+            "lib/model.js",
         ];
 
         function load(src) {
@@ -127,6 +128,7 @@
 
     <!-- *цвет короба-->
     <div class="ktype" id="korob" oninput="setgr()">
+        <b>Цвет короба: </b>
         <input type="radio" value="white" id="whiteK" name="KorColor" checked>
         <label for="whiteK">Белый</label>
         <input type="radio" value="lamin" id="laminK" name="KorColor" class="show">
@@ -166,9 +168,9 @@
     <!--!кнопка СБРОС-->
     <img src="img/reset.jpg" alt="reset" id="reset" class="resbtn" onclick="fullreset()">
     <!--!кнопка ВЫВОД ДАННЫХ ДЛЯ РАЗРАБА-->
-    <img src="img/devbtn.jpg" alt="reset" id="devbtn" class="resbtn" onclick="devout()">
+    <img src="img/devbtn.jpg" alt="reset" id="show_calc" class="resbtn" onclick="toggleCalc()">
 
-    <div class="rs__maincont" id="rs__main">
+    <div class="rs__maincalc" id="rs__calc" data-rs-calc="hide">
 
     </div>
     <script>

@@ -1,50 +1,56 @@
-.rs__maincont {
+.rs__maincalc {
     position: relative;
-    display: block;
+    display: grid;
     left: 1030px;
     top: -60px;
-    border: var(--border-main-d);
-    width: 400px;
-    height: 700px;
+    /* border: var(--border-main-d); */
+    width: 300px;
+    height: auto;
+    grid-template-columns: 1fr 1fr 60px;
+    grid-template-rows: 2rem 2rem auto;
+    grid-template-areas: "w h btn" "props props props" "res res res";
+    grid-gap: 10px 5px;
 }
 
-.rs__wrap {
-    position: relative;
-    width: 296px;
-    display: grid;
-    padding: 1rem auto;
-    margin: 1rem auto;
-    border: var(--border-main);
-    grid-template-columns: 20px auto 50px;
-    grid-template-rows: repeat(3, 1fr);
-    grid-auto-rows: auto;
-    grid-gap: 10px;
-    /* grid-template-areas: "head head head" "type text disc";
-    grid-auto-flow: row; */
+.rs_calc_w {
+    /* background-color: aqua; */
+    grid-area: w;
 }
 
-.rs__block {
-    /* display: grid; */
-    position: absolute;
+.rs_calc_h {
+    /* background-color: aqua; */
+    grid-area: h;
+}
+
+.rs_calc_btn {
+    /* background-color: rgb(41, 65, 65); */
+    grid-area: btn;
+}
+
+.rs_calc_btn>button {
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+}
+
+.rs_calc_disc {
+    background-color: rgb(49, 194, 110);
+    grid-area: disc;
+}
+
+.rs_calc_props {
+    background-color: rgb(23, 168, 23);
+    grid-area: props;
+}
+
+.rs_calc_res {
+    background-color: rgb(85, 38, 26);
+    grid-area: res;
+}
+
+.rs_size {
+    display: block;
+    width: 100px;
     text-align: center;
-}
-
-.rs__control {
-    background-color: aqua;
-}
-
-.rs__type {
-    background-color: rgb(66, 13, 212);
-    /* grid-area: "type"; */
-    color: aquamarine;
-}
-
-.rs__color {
-    background-color: rgb(255, 72, 0);
-    /* grid-area: "text"; */
-}
-
-.rs__disc {
-    background-color: rgb(255, 0, 149);
-    /* grid-area: "disc"; */
+    font-size: 24px;
 }

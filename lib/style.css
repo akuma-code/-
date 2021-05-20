@@ -14,12 +14,6 @@
 }
 
 body {
-    background-image: var(--bg-image-4), var(--bg-image-1);
-    background-color: transparent;
-    background-position: left 390px top 60px, -160px 150px;
-    background-size: contain, auto;
-    background-repeat: no-repeat;
-    background-clip: padding-box;
     height: 820px;
     width: auto;
     overflow: auto;
@@ -30,7 +24,7 @@ body {
     position: relative;
     flex: 1 1 100%;
     max-width: 1000px;
-    background-color: beige;
+    /* background-color: beige; */
     max-height: 700px;
 }
 
@@ -39,6 +33,19 @@ body {
     flex-basis: 100%;
     flex-flow: row wrap;
     justify-content: space-around;
+}
+
+.cont::after {
+    content: "";
+    background-image: url(../img/body/z3.jpg);
+    position: absolute;
+    width: 100%;
+    height: 750px;
+    background-position: 20px 0px;
+    background-repeat: no-repeat;
+    background-size: 1000px 760px;
+    z-index: -1;
+    opacity: 0.15;
 }
 
 .current {
@@ -377,8 +384,17 @@ div.head-item:first-child {
     display: flex;
     position: absolute;
     z-index: 2;
-    left: 350px;
-    top: 50px;
+    left: 219px;
+    top: 150px;
+    background-color: chocolate;
+    border-radius: 5px;
+    height: 30px;
+    font-size: 18px;
+    padding: 2px 5px 2px 5px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-around;
 }
 
 div#outside>span:-moz-first-node {
