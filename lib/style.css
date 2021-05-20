@@ -14,8 +14,12 @@
 }
 
 body {
-    background-image: var(--bg-image-4);
+    background-image: var(--bg-image-4), var(--bg-image-1);
     background-color: transparent;
+    background-position: left 390px top 60px, -160px 150px;
+    background-size: contain, auto;
+    background-repeat: no-repeat;
+    background-clip: padding-box;
     height: 820px;
     width: auto;
     overflow: auto;
