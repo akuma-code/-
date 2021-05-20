@@ -14,9 +14,16 @@
 }
 
 body {
+    background-color: beige;
     height: 820px;
     width: auto;
     overflow: auto;
+}
+
+body>h1 {
+    width: fit-content;
+    padding-left: 2rem;
+    transform: scale(1.3);
 }
 
 .cont {
@@ -24,7 +31,6 @@ body {
     position: relative;
     flex: 1 1 100%;
     max-width: 1000px;
-    /* background-color: beige; */
     max-height: 700px;
 }
 
