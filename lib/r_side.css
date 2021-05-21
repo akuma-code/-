@@ -1,50 +1,57 @@
-.rs__maincont {
+.rs__maincalc {
     position: relative;
-    display: block;
-    left: 1030px;
-    top: -60px;
-    border: var(--border-main-d);
-    width: 400px;
-    height: 700px;
-}
-
-.rs__wrap {
-    position: relative;
-    width: 296px;
     display: grid;
-    padding: 1rem auto;
-    margin: 1rem auto;
-    border: var(--border-main);
-    grid-template-columns: 20px auto 50px;
-    grid-template-rows: repeat(3, 1fr);
-    grid-auto-rows: auto;
-    grid-gap: 10px;
-    /* grid-template-areas: "head head head" "type text disc";
-    grid-auto-flow: row; */
+    left: 1030px;
+    top: -55px;
+    /* border: var(--border-main-d); */
+    width: 300px;
+    height: auto;
+    grid-template-columns: 1fr 1fr 60px;
+    grid-template-rows: 3rem auto;
+    grid-template-areas: "w h btn" "res res res";
+    grid-gap: 10px 5px;
 }
 
-.rs__block {
-    /* display: grid; */
-    position: absolute;
+.rs_calc_w {
+    /* background-color: aqua; */
+    grid-area: w;
+}
+
+.rs_calc_h {
+    /* background-color: aqua; */
+    grid-area: h;
+}
+
+.rs_calc_btn {
+    /* background-color: rgb(41, 65, 65); */
+    grid-area: btn;
+}
+
+.rs_calc_btn>button {
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+}
+
+.rs_calc_res {
+    display: grid;
+    grid-gap: 5px;
+    background-color: #ffffffc7;
+    background-size: auto;
+    grid-area: res;
+    font-size: 1.2rem;
     text-align: center;
+    width: 100%;
 }
 
-.rs__control {
-    background-color: aqua;
+.rs_out {
+    border: 2px groove black;
+    border-radius: 5px;
 }
 
-.rs__type {
-    background-color: rgb(66, 13, 212);
-    /* grid-area: "type"; */
-    color: aquamarine;
-}
-
-.rs__color {
-    background-color: rgb(255, 72, 0);
-    /* grid-area: "text"; */
-}
-
-.rs__disc {
-    background-color: rgb(255, 0, 149);
-    /* grid-area: "disc"; */
+.rs_size {
+    display: block;
+    width: 100px;
+    text-align: center;
+    font-size: 24px;
 }
