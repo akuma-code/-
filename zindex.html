@@ -173,7 +173,13 @@
     </div>
     <!--!кнопка СБРОС-->
     <img src="img/reset.jpg" alt="reset" id="reset" class="resbtn" onclick="fullreset()">
-    <!--!кнопка ВЫВОД ДАННЫХ ДЛЯ РАЗРАБА-->
+
+
+    <div class="btn__cont" id="btn__cont">
+        <div class="btn__thumb " data-calc-state="close" onclick="toggle_rs_calc(this)"></div>
+    </div>
+
+
     <img src="img/devbtn.jpg" alt="reset" id="show_calc" class="resbtn" onclick="toggleCalc()">
 
     <div class="rs__maincalc" id="rs__calc" data-rs-calc="hide">
@@ -186,6 +192,8 @@
         tl();
         showdisc();
     </script>
+
+
 </body>
 
 </html>

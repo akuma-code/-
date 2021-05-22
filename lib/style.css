@@ -2,6 +2,7 @@
 @import url("sidepanel.css");
 @import url("style-btn.css");
 @import url("r_side.css");
+@import url("btn-tgl.css");
 :root {
     --main-color: chocolate;
     --main-bg-color: coral;

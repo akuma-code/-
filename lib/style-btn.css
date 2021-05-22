@@ -46,6 +46,7 @@
 }
 
 #show_calc.resbtn {
+    display: none;
     visibility: visible;
     left: 580px;
     border-radius: 30px;
