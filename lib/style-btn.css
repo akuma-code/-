@@ -38,7 +38,6 @@
 .resbtn {
     display: block;
     position: absolute;
-    top: 15px;
     width: 170px;
     height: auto;
     transition: all .3s;
@@ -56,14 +55,16 @@
 
 #reset.resbtn {
     display: none;
-    left: 1025px;
+    left: 680px;
+    top: 365px;
+    transform: rotate(270deg);
 }
 
 .resbtn:hover {
     transform: scaleX(1.15) scaleY(1.15);
 }
 
-#show_calc.resbtn:hover {
+#reset.resbtn:hover {
     transform: scaleX(1.05) scaleY(1.15);
 }
 
@@ -72,7 +73,7 @@
     top: 25px;
 }
 
-#show_calc.resbtn:hover:active {
+#reset.resbtn:hover:active {
     transform: scaleX(.8) scaleY(.9);
     top: 10px;
 }
@@ -95,56 +96,6 @@
     border-radius: 10px;
     background-color: coral;
     visibility: visible;
-}
-
-.detout {
-    display: flex;
-    position: absolute;
-    left: 1030px;
-    /* width: 270px; */
-    /* outline: 1px solid black; */
-    top: 80px;
-    box-sizing: border-box;
-    text-align: center;
-    max-height: 750px;
-    overflow-y: auto;
-    list-style-position: outside;
-}
-
-
-/* !ВОТ ЗДЕСЬ ВКЛЮЧИТЬ ДИСПЛЕЙ!! */
-
-.detout>details {
-    flex-flow: row wrap;
-    display: none;
-}
-
-.detout>summary {
-    white-space: nowrap;
-}
-
-.details-box {
-    /* display: flex; */
-    border: 1px solid black;
-}
-
-.details-box tr:hover {
-    background-color: cadetblue;
-}
-
-.details-box details[open]>summary:first-of-type {
-    font-size: 1.2rem;
-}
-
-.details-box[open] table th {
-    width: 100%;
-    empty-cells: hide;
-    white-space: nowrap;
-}
-
-.details-grid {
-    display: grid;
-    width: fit-content;
 }
 
 .gridbox {

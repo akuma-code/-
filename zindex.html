@@ -65,7 +65,9 @@
 </head>
 
 <body>
-    <h1 onclick="reload()">ЖАЛЮЗИ</h1>
+    <div>
+        <h1 onclick="reload()" class="tooltip">ЖАЛЮЗИ</h1> <span class="tooltiptext">Рассчет жалюзей по профилю</span>
+    </div>
     <!-- *Header: кнопки смены профильной системы, толщины ст-п, типа и цвета жалюзи а также их группа и, наконец, кнопка расчета -->
     <header class="head">
         <div class="headcont">
@@ -176,7 +178,7 @@
 
 
     <div class="btn__cont" id="btn__cont">
-        <div class="btn__thumb " data-calc-state="close" onclick="toggle_rs_calc(this)"></div>
+        <div class="btn__thumb" data-calc-state="close" onclick="toggle_rs_calc(this)"></div>
     </div>
 
 
